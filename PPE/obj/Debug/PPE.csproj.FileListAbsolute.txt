@@ -1,0 +1,11 @@
+D:\Cours - Programmation\C#\PPE\PPE\bin\Debug\PPE.exe.config
+D:\Cours - Programmation\C#\PPE\PPE\bin\Debug\PPE.exe
+D:\Cours - Programmation\C#\PPE\PPE\bin\Debug\PPE.pdb
+D:\Cours - Programmation\C#\PPE\PPE\obj\Debug\PPE.csprojAssemblyReference.cache
+D:\Cours - Programmation\C#\PPE\PPE\obj\Debug\PPE.Form1.resources
+D:\Cours - Programmation\C#\PPE\PPE\obj\Debug\PPE.Properties.Resources.resources
+D:\Cours - Programmation\C#\PPE\PPE\obj\Debug\PPE.csproj.GenerateResource.cache
+D:\Cours - Programmation\C#\PPE\PPE\obj\Debug\PPE.csproj.CoreCompileInputs.cache
+D:\Cours - Programmation\C#\PPE\PPE\obj\Debug\PPE.exe
+D:\Cours - Programmation\C#\PPE\PPE\obj\Debug\PPE.pdb
+D:\Cours - Programmation\C#\PPE\PPE\obj\Debug\PPE.Form_AjoutMot.resources
