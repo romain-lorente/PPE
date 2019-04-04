@@ -22,5 +22,20 @@ namespace PPE
         {
             return this.fonction;
         }
+
+        public void setFonction(string fonction)
+        {
+            this.fonction = fonction;
+        }
+
+        public string[] getConjugaison()
+        {
+            return this.conjugaison;
+        }
+
+        public void setConjugaison(string[] conjugaison)
+        {
+            this.conjugaison = conjugaison;
+        }
     }
 }

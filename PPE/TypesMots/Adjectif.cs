@@ -20,5 +20,10 @@ namespace PPE
         {
             return this.fonction;
         }
+
+        public void setFonction(string fonction)
+        {
+            this.fonction = fonction;
+        }
     }
 }
