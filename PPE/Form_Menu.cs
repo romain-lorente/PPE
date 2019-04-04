@@ -31,9 +31,6 @@ namespace PPE
             lesMots.Add(new Nom("pomme", "Féminin", "Singulier", "Commun"));
             lesMots.Add(new Nom("table", "Féminin", "Singulier", "Commun"));
             lesMots.Add(new Nom("crayon", "Masculin", "Singulier", "Commun"));
-            lesMots.Add(new Nom("Brandon", "Masculin", "Singulier", "Propre"));
-            lesMots.Add(new Nom("Jordan", "Masculin", "Singulier", "Propre"));
-            lesMots.Add(new Nom("Dylan", "Masculin", "Singulier", "Propre"));
             lesMots.Add(new Nom("Quentin", "Masculin", "Singulier", "Propre"));
             lesMots.Add(new Nom("Romain", "Masculin", "Singulier", "Propre"));
             lesMots.Add(new Adjectif("beau", "Masculin", "Singulier", "Qualificatif"));

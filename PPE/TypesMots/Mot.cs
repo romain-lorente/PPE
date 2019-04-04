@@ -37,5 +37,25 @@ namespace PPE
         {
             this.texte = texte;
         }
+
+        public string getGenre()
+        {
+            return this.genre;
+        }
+
+        public void setGenre(string genre)
+        {
+            this.genre = genre;
+        }
+
+        public string getNombre()
+        {
+            return this.nombre;
+        }
+
+        public void getNombre(string nombre)
+        {
+            this.nombre = nombre;
+        }
     }
 }

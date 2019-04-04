@@ -20,5 +20,10 @@ namespace PPE
         {
             return this.nature;
         }
+
+        public void setNature(string nature)
+        {
+            this.nature = nature;
+        }
     }
 }

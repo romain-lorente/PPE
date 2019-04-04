@@ -44,7 +44,8 @@ namespace PPE
 
         private void ajoutVerbe_Click(object sender, EventArgs e)
         {
-            string[] conjugaisonVerbe = new string[] { pers1SVerbe.Text, pers2SVerbe.Text, pers3SVerbe.Text, pers1PVerbe.Text, pers2PVerbe.Text, pers3PVerbe.Text, };
+            string[] conjugaisonVerbe = new string[] { pers1SVerbe.Text, pers2SVerbe.Text, pers3SVerbe.Text,
+            pers1PVerbe.Text, pers2PVerbe.Text, pers3PVerbe.Text, };
             Verbe unVerbe = new Verbe(infinitifVerbe.Text, fonctionVerbe.Text, conjugaisonVerbe);
             string[] row = new string[] { infinitifVerbe.Text, "Verbe" };
             listeMots.Rows.Add(row);
