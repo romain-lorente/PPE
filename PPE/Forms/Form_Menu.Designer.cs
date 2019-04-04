@@ -34,7 +34,7 @@
             this.jouerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jeuNormalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entraînementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.texteMenu = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,33 +79,32 @@
             // jeuNormalToolStripMenuItem
             // 
             this.jeuNormalToolStripMenuItem.Name = "jeuNormalToolStripMenuItem";
-            this.jeuNormalToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.jeuNormalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.jeuNormalToolStripMenuItem.Text = "Jeu normal";
             // 
             // entraînementToolStripMenuItem
             // 
             this.entraînementToolStripMenuItem.Name = "entraînementToolStripMenuItem";
-            this.entraînementToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.entraînementToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.entraînementToolStripMenuItem.Text = "Entraînement";
             // 
-            // richTextBox1
+            // texteMenu
             // 
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Enabled = false;
-            this.richTextBox1.Location = new System.Drawing.Point(13, 28);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(452, 108);
-            this.richTextBox1.TabIndex = 4;
-            this.richTextBox1.TabStop = false;
-            this.richTextBox1.Text = "Bienvenue !\n\nUtilisez le menu ci-dessus pour jouer ou ajouter de nouveaux mots.";
+            this.texteMenu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.texteMenu.Location = new System.Drawing.Point(13, 28);
+            this.texteMenu.Name = "texteMenu";
+            this.texteMenu.ReadOnly = true;
+            this.texteMenu.Size = new System.Drawing.Size(452, 108);
+            this.texteMenu.TabIndex = 4;
+            this.texteMenu.TabStop = false;
+            this.texteMenu.Text = "Bienvenue !\n\nUtilisez le menu ci-dessus pour jouer ou ajouter de nouveaux mots.";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(477, 148);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.texteMenu);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
@@ -127,7 +126,7 @@
         private System.Windows.Forms.ToolStripMenuItem jouerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem jeuNormalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem entraînementToolStripMenuItem;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox texteMenu;
     }
 }
 
