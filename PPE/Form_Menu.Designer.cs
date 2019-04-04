@@ -34,6 +34,7 @@
             this.jouerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jeuNormalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entraînementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +48,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(2, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(586, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(477, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -87,11 +88,22 @@
             this.entraînementToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.entraînementToolStripMenuItem.Text = "Entraînement";
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Location = new System.Drawing.Point(13, 28);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(452, 275);
+            this.richTextBox1.TabIndex = 4;
+            this.richTextBox1.Text = "Bienvenue !\n\nUtilisez le menu ci-dessus pour jouer ou ajouter de nouveaux mots.";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(586, 449);
+            this.ClientSize = new System.Drawing.Size(477, 315);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -112,6 +124,7 @@
         private System.Windows.Forms.ToolStripMenuItem jouerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem jeuNormalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem entraînementToolStripMenuItem;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 
