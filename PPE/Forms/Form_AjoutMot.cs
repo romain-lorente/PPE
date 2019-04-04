@@ -13,10 +13,12 @@ namespace PPE
     public partial class Form_AjoutMot : Form
     {
         private List<Mot> lesMots;
+        private Utilisateur utilisateurEnCours;
 
-        public Form_AjoutMot(List<Mot> lesMots)
+        public Form_AjoutMot(List<Mot> lesMots, Utilisateur utilisateurEnCours)
         {
             this.lesMots = lesMots;
+            this.utilisateurEnCours = utilisateurEnCours;
             InitializeComponent();
         }
 
