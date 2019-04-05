@@ -16,9 +16,18 @@ namespace PPE
         {
             List<Mot> lesMots;
             lesMots = new List<Mot>();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1(lesMots));
+
+            Form_Connexion connexion = new Form_Connexion();
+
+            Application.Run(connexion);
+
+            if (connexion.Utilisateur != null)
+            {
+                Application.Run(new Form1(lesMots, connexion.Utilisateur));
+            }
         }
     }
 }

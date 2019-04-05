@@ -29,11 +29,14 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fenêtreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ajouterMotToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.jouerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jeuNormalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entraînementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.profilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.voirMonProfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.classementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fenêtreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ajouterMotToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.texteMenu = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -43,29 +46,15 @@
             this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fenêtreToolStripMenuItem,
-            this.jouerToolStripMenuItem});
+            this.jouerToolStripMenuItem,
+            this.profilToolStripMenuItem,
+            this.fenêtreToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(477, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // fenêtreToolStripMenuItem
-            // 
-            this.fenêtreToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ajouterMotToolStripMenuItem1});
-            this.fenêtreToolStripMenuItem.Name = "fenêtreToolStripMenuItem";
-            this.fenêtreToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.fenêtreToolStripMenuItem.Text = "Ajout";
-            // 
-            // ajouterMotToolStripMenuItem1
-            // 
-            this.ajouterMotToolStripMenuItem1.Name = "ajouterMotToolStripMenuItem1";
-            this.ajouterMotToolStripMenuItem1.Size = new System.Drawing.Size(155, 22);
-            this.ajouterMotToolStripMenuItem1.Text = "Ajouter un mot";
-            this.ajouterMotToolStripMenuItem1.Click += new System.EventHandler(this.ajouterMotToolStripMenuItem1_Click);
             // 
             // jouerToolStripMenuItem
             // 
@@ -79,14 +68,51 @@
             // jeuNormalToolStripMenuItem
             // 
             this.jeuNormalToolStripMenuItem.Name = "jeuNormalToolStripMenuItem";
-            this.jeuNormalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.jeuNormalToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.jeuNormalToolStripMenuItem.Text = "Jeu normal";
             // 
             // entraînementToolStripMenuItem
             // 
             this.entraînementToolStripMenuItem.Name = "entraînementToolStripMenuItem";
-            this.entraînementToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.entraînementToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.entraînementToolStripMenuItem.Text = "Entraînement";
+            // 
+            // profilToolStripMenuItem
+            // 
+            this.profilToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.voirMonProfilToolStripMenuItem,
+            this.classementToolStripMenuItem});
+            this.profilToolStripMenuItem.Name = "profilToolStripMenuItem";
+            this.profilToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
+            this.profilToolStripMenuItem.Text = "Communauté";
+            // 
+            // voirMonProfilToolStripMenuItem
+            // 
+            this.voirMonProfilToolStripMenuItem.Name = "voirMonProfilToolStripMenuItem";
+            this.voirMonProfilToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.voirMonProfilToolStripMenuItem.Text = "Profil";
+            this.voirMonProfilToolStripMenuItem.Click += new System.EventHandler(this.voirMonProfilToolStripMenuItem_Click);
+            // 
+            // classementToolStripMenuItem
+            // 
+            this.classementToolStripMenuItem.Name = "classementToolStripMenuItem";
+            this.classementToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.classementToolStripMenuItem.Text = "Classement";
+            // 
+            // fenêtreToolStripMenuItem
+            // 
+            this.fenêtreToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ajouterMotToolStripMenuItem1});
+            this.fenêtreToolStripMenuItem.Name = "fenêtreToolStripMenuItem";
+            this.fenêtreToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
+            this.fenêtreToolStripMenuItem.Text = "Administration";
+            // 
+            // ajouterMotToolStripMenuItem1
+            // 
+            this.ajouterMotToolStripMenuItem1.Name = "ajouterMotToolStripMenuItem1";
+            this.ajouterMotToolStripMenuItem1.Size = new System.Drawing.Size(155, 22);
+            this.ajouterMotToolStripMenuItem1.Text = "Ajouter un mot";
+            this.ajouterMotToolStripMenuItem1.Click += new System.EventHandler(this.ajouterMotToolStripMenuItem1_Click);
             // 
             // texteMenu
             // 
@@ -127,6 +153,9 @@
         private System.Windows.Forms.ToolStripMenuItem jeuNormalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem entraînementToolStripMenuItem;
         private System.Windows.Forms.RichTextBox texteMenu;
+        private System.Windows.Forms.ToolStripMenuItem profilToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem voirMonProfilToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem classementToolStripMenuItem;
     }
 }
 

@@ -13,15 +13,21 @@ namespace PPE
     public partial class Form1 : Form
     {
         private List<Mot> lesMots;
+        private Utilisateur utilisateurEnCours;
 
-        public Form1(List<Mot> lesMots)
+        public Form1(List<Mot> lesMots, Utilisateur utilisateurEnCours)
         {
             this.lesMots = lesMots;
+            this.utilisateurEnCours = utilisateurEnCours;
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            string[] texte = texteMenu.Lines;
+            texte[0] = "Bienvenue " + utilisateurEnCours.getPrenom() + " !";
+            texteMenu.Lines = texte;
+
             lesMots.Add(new Verbe("Être", "État", new string[] { "suis", "es", "est", "sommes", "êtes", "sont"}));
             lesMots.Add(new Verbe("Avoir", "Action", new string[] { "ai", "as", "a", "avons", "avez", "ont" }));
             lesMots.Add(new Verbe("Faire", "Action", new string[] { "fais", "fais", "fait", "faisons", "faites", "font"}));
@@ -42,8 +48,21 @@ namespace PPE
 
         private void ajouterMotToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Form_AjoutMot ajoutMot = new Form_AjoutMot(this.lesMots);
-            ajoutMot.ShowDialog();
+            if(utilisateurEnCours.getRole())
+            {
+                Form_AjoutMot ajoutMot = new Form_AjoutMot(this.lesMots, utilisateurEnCours);
+                ajoutMot.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Vous n'avez pas accès à cette fonctionnalité.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void voirMonProfilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Profil profil = new Form_Profil(utilisateurEnCours);
+            profil.ShowDialog();
         }
     }
 }
