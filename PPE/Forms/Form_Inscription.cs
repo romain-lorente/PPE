@@ -26,11 +26,18 @@ namespace PPE
             {
                 if (inputMDP.Text == inputConfirmerMDP.Text)
                 {
-                    string encodageMDP = Encodage.ConversionSHA256(inputMDP.Text);
-                    lesUtilisateurs.Add(new Utilisateur(inputLogin.Text, encodageMDP, inputNom.Text, inputPrenom.Text, false));
+                    if(inputMDP.Text.Length > 3)
+                    {
+                        string encodageMDP = Encodage.ConversionSHA256(inputMDP.Text);
+                        lesUtilisateurs.Add(new Utilisateur(inputLogin.Text, encodageMDP, inputNom.Text, inputPrenom.Text, false));
 
-                    MessageBox.Show("Inscription réussie.", "Inscription", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+                        MessageBox.Show("Inscription réussie.", "Inscription", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Impossible d'utiliser un mot de passe de moins de 4 caractères.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {

@@ -11,3 +11,4 @@ D:\Cours - Programmation\C#\PPE\PPE\obj\Debug\PPE.pdb
 D:\Cours - Programmation\C#\PPE\PPE\obj\Debug\PPE.Form_AjoutMot.resources
 D:\Cours - Programmation\C#\PPE\PPE\obj\Debug\PPE.Form_Connexion.resources
 D:\Cours - Programmation\C#\PPE\PPE\obj\Debug\PPE.Form_Inscription.resources
+D:\Cours - Programmation\C#\PPE\PPE\obj\Debug\PPE.Form_Profil.resources

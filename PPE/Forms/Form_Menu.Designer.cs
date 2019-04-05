@@ -91,6 +91,7 @@
             this.voirMonProfilToolStripMenuItem.Name = "voirMonProfilToolStripMenuItem";
             this.voirMonProfilToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.voirMonProfilToolStripMenuItem.Text = "Profil";
+            this.voirMonProfilToolStripMenuItem.Click += new System.EventHandler(this.voirMonProfilToolStripMenuItem_Click);
             // 
             // classementToolStripMenuItem
             // 

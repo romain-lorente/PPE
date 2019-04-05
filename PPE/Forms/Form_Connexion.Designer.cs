@@ -56,6 +56,7 @@
             // 
             this.inputMDP.Location = new System.Drawing.Point(103, 36);
             this.inputMDP.Name = "inputMDP";
+            this.inputMDP.PasswordChar = '•';
             this.inputMDP.Size = new System.Drawing.Size(191, 20);
             this.inputMDP.TabIndex = 2;
             // 

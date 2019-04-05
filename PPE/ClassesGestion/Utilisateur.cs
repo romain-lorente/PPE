@@ -49,9 +49,24 @@ namespace PPE
             return this.nom;
         }
 
+        public void setNom(string nom)
+        {
+            this.nom = nom;
+        }
+
         public string getPrenom()
         {
             return this.prenom;
+        }
+
+        public void setPrenom(string prenom)
+        {
+            this.prenom = prenom;
+        }
+
+        public int getScore()
+        {
+            return this.meilleurScore;
         }
 
         public bool getRole()

@@ -54,6 +54,7 @@
             // 
             this.inputMDP.Location = new System.Drawing.Point(146, 32);
             this.inputMDP.Name = "inputMDP";
+            this.inputMDP.PasswordChar = '•';
             this.inputMDP.Size = new System.Drawing.Size(191, 20);
             this.inputMDP.TabIndex = 6;
             // 
@@ -86,6 +87,7 @@
             // 
             this.inputConfirmerMDP.Location = new System.Drawing.Point(146, 58);
             this.inputConfirmerMDP.Name = "inputConfirmerMDP";
+            this.inputConfirmerMDP.PasswordChar = '•';
             this.inputConfirmerMDP.Size = new System.Drawing.Size(191, 20);
             this.inputConfirmerMDP.TabIndex = 8;
             // 

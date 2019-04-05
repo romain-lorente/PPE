@@ -42,8 +42,6 @@ namespace PPE
             {
                 if(Encodage.ConversionSHA256(inputMDP.Text) == utilisateurEnCours.getMotDePasse())
                 {
-                    //Form1 menu = new Form1(this.lesMots, utilisateurEnCours);
-                    //menu.Show();
                     Utilisateur = utilisateurEnCours;
                     this.Dispose();
                 }

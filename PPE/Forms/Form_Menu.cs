@@ -58,5 +58,11 @@ namespace PPE
                 MessageBox.Show("Vous n'avez pas accès à cette fonctionnalité.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void voirMonProfilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Profil profil = new Form_Profil(utilisateurEnCours);
+            profil.ShowDialog();
+        }
     }
 }
