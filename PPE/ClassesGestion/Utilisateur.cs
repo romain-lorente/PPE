@@ -39,9 +39,24 @@ namespace PPE
             return this.motDePasse;
         }
 
+        public void setMotDePasse(string motDePasse)
+        {
+            this.motDePasse = motDePasse;
+        }
+
+        public string getNom()
+        {
+            return this.nom;
+        }
+
         public string getPrenom()
         {
             return this.prenom;
+        }
+
+        public bool getRole()
+        {
+            return this.estAdministrateur;
         }
     }
 }

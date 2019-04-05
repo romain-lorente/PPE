@@ -48,8 +48,15 @@ namespace PPE
 
         private void ajouterMotToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Form_AjoutMot ajoutMot = new Form_AjoutMot(this.lesMots, utilisateurEnCours);
-            ajoutMot.ShowDialog();
+            if(utilisateurEnCours.getRole())
+            {
+                Form_AjoutMot ajoutMot = new Form_AjoutMot(this.lesMots, utilisateurEnCours);
+                ajoutMot.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Vous n'avez pas accès à cette fonctionnalité.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
