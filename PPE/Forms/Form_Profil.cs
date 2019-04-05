@@ -30,6 +30,12 @@ namespace PPE
             string role = utilisateurEnCours.getRole() ? "Administrateur" : "Utilisateur";
 
             labelRole.Text = "Vous êtes " + role;
+
+            //Suppression du texte dans les formulaires
+            inputMDP.Text = "";
+            inputMDPold.Text = "";
+            inputNom.Text = "";
+            inputPrenom.Text = "";
         }
 
         private void validerNom_Click(object sender, EventArgs e)
