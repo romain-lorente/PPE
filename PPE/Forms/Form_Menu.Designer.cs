@@ -110,8 +110,8 @@
             // ajouterMotToolStripMenuItem1
             // 
             this.ajouterMotToolStripMenuItem1.Name = "ajouterMotToolStripMenuItem1";
-            this.ajouterMotToolStripMenuItem1.Size = new System.Drawing.Size(155, 22);
-            this.ajouterMotToolStripMenuItem1.Text = "Ajouter un mot";
+            this.ajouterMotToolStripMenuItem1.Size = new System.Drawing.Size(183, 22);
+            this.ajouterMotToolStripMenuItem1.Text = "Gestion des données";
             this.ajouterMotToolStripMenuItem1.Click += new System.EventHandler(this.ajouterMotToolStripMenuItem1_Click);
             // 
             // texteMenu
