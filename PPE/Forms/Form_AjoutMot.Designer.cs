@@ -70,11 +70,16 @@
             this.label15 = new System.Windows.Forms.Label();
             this.texteAdjectif = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.tabSelection = new System.Windows.Forms.TabControl();
+            this.tabMot = new System.Windows.Forms.TabPage();
+            this.tabPhrase = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.listeMots)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabNom.SuspendLayout();
             this.tabVerbe.SuspendLayout();
             this.tabAdjectif.SuspendLayout();
+            this.tabSelection.SuspendLayout();
+            this.tabMot.SuspendLayout();
             this.SuspendLayout();
             // 
             // listeMots
@@ -84,11 +89,11 @@
             this.listeMots.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Mot,
             this.Type});
-            this.listeMots.Location = new System.Drawing.Point(9, 10);
+            this.listeMots.Location = new System.Drawing.Point(5, 6);
             this.listeMots.Margin = new System.Windows.Forms.Padding(2);
             this.listeMots.Name = "listeMots";
             this.listeMots.RowTemplate.Height = 24;
-            this.listeMots.Size = new System.Drawing.Size(393, 428);
+            this.listeMots.Size = new System.Drawing.Size(393, 424);
             this.listeMots.TabIndex = 0;
             // 
             // Mot
@@ -108,7 +113,7 @@
             this.tabControl1.Controls.Add(this.tabNom);
             this.tabControl1.Controls.Add(this.tabVerbe);
             this.tabControl1.Controls.Add(this.tabAdjectif);
-            this.tabControl1.Location = new System.Drawing.Point(420, 10);
+            this.tabControl1.Location = new System.Drawing.Point(403, 6);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(388, 428);
@@ -501,13 +506,44 @@
             this.label16.TabIndex = 8;
             this.label16.Text = "Entrer l\'adjectif :";
             // 
+            // tabSelection
+            // 
+            this.tabSelection.Controls.Add(this.tabMot);
+            this.tabSelection.Controls.Add(this.tabPhrase);
+            this.tabSelection.Location = new System.Drawing.Point(11, 9);
+            this.tabSelection.Name = "tabSelection";
+            this.tabSelection.SelectedIndex = 0;
+            this.tabSelection.Size = new System.Drawing.Size(796, 466);
+            this.tabSelection.TabIndex = 2;
+            // 
+            // tabMot
+            // 
+            this.tabMot.Controls.Add(this.listeMots);
+            this.tabMot.Controls.Add(this.tabControl1);
+            this.tabMot.Location = new System.Drawing.Point(4, 22);
+            this.tabMot.Name = "tabMot";
+            this.tabMot.Padding = new System.Windows.Forms.Padding(3);
+            this.tabMot.Size = new System.Drawing.Size(788, 440);
+            this.tabMot.TabIndex = 0;
+            this.tabMot.Text = "Mot";
+            this.tabMot.UseVisualStyleBackColor = true;
+            // 
+            // tabPhrase
+            // 
+            this.tabPhrase.Location = new System.Drawing.Point(4, 22);
+            this.tabPhrase.Name = "tabPhrase";
+            this.tabPhrase.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPhrase.Size = new System.Drawing.Size(788, 440);
+            this.tabPhrase.TabIndex = 1;
+            this.tabPhrase.Text = "Phrase";
+            this.tabPhrase.UseVisualStyleBackColor = true;
+            // 
             // Form_AjoutMot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(820, 449);
-            this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.listeMots);
+            this.ClientSize = new System.Drawing.Size(815, 483);
+            this.Controls.Add(this.tabSelection);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form_AjoutMot";
@@ -521,6 +557,8 @@
             this.tabVerbe.PerformLayout();
             this.tabAdjectif.ResumeLayout(false);
             this.tabAdjectif.PerformLayout();
+            this.tabSelection.ResumeLayout(false);
+            this.tabMot.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -569,5 +607,8 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox texteAdjectif;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TabControl tabSelection;
+        private System.Windows.Forms.TabPage tabMot;
+        private System.Windows.Forms.TabPage tabPhrase;
     }
 }
