@@ -25,7 +25,7 @@ namespace PPE
         private void Form1_Load(object sender, EventArgs e)
         {
             string[] texte = texteMenu.Lines;
-            texte[0] = "Bienvenue " + utilisateurEnCours.getPrenom() + " !";
+            texte[0] = "Bienvenue " + utilisateurEnCours.Prenom + " !";
             texteMenu.Lines = texte;
 
             lesMots.Add(new Verbe("Être", "État", new string[] { "suis", "es", "est", "sommes", "êtes", "sont"}));
@@ -48,7 +48,7 @@ namespace PPE
 
         private void ajouterMotToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if(utilisateurEnCours.getRole())
+            if(utilisateurEnCours.EstAdministrateur)
             {
                 Form_AjoutMot ajoutMot = new Form_AjoutMot(this.lesMots, utilisateurEnCours);
                 ajoutMot.ShowDialog();
