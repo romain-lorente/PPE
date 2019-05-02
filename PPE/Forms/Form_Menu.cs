@@ -12,12 +12,10 @@ namespace PPE
 {
     public partial class Form1 : Form
     {
-        private List<Mot> lesMots;
         private Utilisateur utilisateurEnCours;
 
-        public Form1(List<Mot> lesMots, Utilisateur utilisateurEnCours)
+        public Form1(Utilisateur utilisateurEnCours)
         {
-            this.lesMots = lesMots;
             this.utilisateurEnCours = utilisateurEnCours;
             InitializeComponent();
         }
@@ -25,10 +23,10 @@ namespace PPE
         private void Form1_Load(object sender, EventArgs e)
         {
             string[] texte = texteMenu.Lines;
-            texte[0] = "Bienvenue " + utilisateurEnCours.getPrenom() + " !";
+            texte[0] = "Bienvenue " + utilisateurEnCours.Prenom + " !";
             texteMenu.Lines = texte;
 
-            lesMots.Add(new Verbe("Être", "État", new string[] { "suis", "es", "est", "sommes", "êtes", "sont"}));
+            /*lesMots.Add(new Verbe("Être", "État", new string[] { "suis", "es", "est", "sommes", "êtes", "sont"}));
             lesMots.Add(new Verbe("Avoir", "Action", new string[] { "ai", "as", "a", "avons", "avez", "ont" }));
             lesMots.Add(new Verbe("Faire", "Action", new string[] { "fais", "fais", "fait", "faisons", "faites", "font"}));
             lesMots.Add(new Verbe("Dormir", "Action", new string[] { "dors", "dors", "dort", "dormons", "dormez", "dorment"}));
@@ -43,14 +41,14 @@ namespace PPE
             lesMots.Add(new Adjectif("grand", "Masculin", "Singulier", "Qualificatif"));
             lesMots.Add(new Adjectif("petit", "Masculin", "Singulier", "Qualificatif"));
             lesMots.Add(new Adjectif("jeune", "Masculin", "Singulier", "Qualificatif"));
-            lesMots.Add(new Adjectif("vieux", "Masculin", "Singulier", "Qualificatif"));
+            lesMots.Add(new Adjectif("vieux", "Masculin", "Singulier", "Qualificatif"));*/
         }
 
         private void ajouterMotToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if(utilisateurEnCours.getRole())
+            if(utilisateurEnCours.EstAdministrateur)
             {
-                Form_AjoutMot ajoutMot = new Form_AjoutMot(this.lesMots, utilisateurEnCours);
+                Form_AjoutMot ajoutMot = new Form_AjoutMot(utilisateurEnCours);
                 ajoutMot.ShowDialog();
             }
             else

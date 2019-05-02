@@ -12,27 +12,24 @@ namespace PPE
 {
     public partial class Form_Inscription : Form
     {
-        private List<Utilisateur> lesUtilisateurs;
-
-        public Form_Inscription(List<Utilisateur> lesUtilisateurs)
+        public Form_Inscription()
         {
-            this.lesUtilisateurs = lesUtilisateurs;
             InitializeComponent();
         }
 
         private void boutonValider_Click(object sender, EventArgs e)
         {
-            if(VerificationLogin())
+            if(!PPEDataBase.Utilisateur.Existe(inputLogin.Text))
             {
                 if (inputMDP.Text == inputConfirmerMDP.Text)
                 {
                     if(inputMDP.Text.Length > 3)
                     {
                         string encodageMDP = Encodage.ConversionSHA256(inputMDP.Text);
-                        lesUtilisateurs.Add(new Utilisateur(inputLogin.Text, encodageMDP, inputNom.Text, inputPrenom.Text, false));
+                        PPEDataBase.Utilisateur.InsertOne(new Utilisateur(inputLogin.Text, encodageMDP, inputNom.Text, inputPrenom.Text, false));
 
                         MessageBox.Show("Inscription réussie.", "Inscription", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
+                        this.Dispose();
                     }
                     else
                     {
@@ -48,18 +45,6 @@ namespace PPE
             {
                 MessageBox.Show("Cet utilisateur existe déjà. Veuillez utiliser un autre identifiant.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private bool VerificationLogin()
-        {
-            foreach (Utilisateur unUtilisateur in lesUtilisateurs)
-            {
-                if (unUtilisateur.getLogin() == inputLogin.Text)
-                {
-                    return false;
-                }
-            }
-            return true;
         }
     }
 }

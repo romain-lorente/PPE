@@ -21,32 +21,17 @@ namespace PPE
             actualiserInformations();
         }
 
-        public void actualiserInformations()
-        {
-            titreProfil.Text = "Profil de " + utilisateurEnCours.getLogin();
-            labelNom.Text = utilisateurEnCours.getNom() + " " + utilisateurEnCours.getPrenom();
-            labelScore.Text = "Score : " + utilisateurEnCours.getScore();
-
-            string role = utilisateurEnCours.getRole() ? "Administrateur" : "Utilisateur";
-
-            labelRole.Text = "Vous êtes " + role;
-
-            //Suppression du texte dans les formulaires
-            inputMDP.Text = "";
-            inputMDPold.Text = "";
-            inputNom.Text = "";
-            inputPrenom.Text = "";
-        }
-
         private void validerNom_Click(object sender, EventArgs e)
         {
             if(inputNom.Text != "" && inputPrenom.Text != "")
             {
-                utilisateurEnCours.setNom(inputNom.Text);
-                utilisateurEnCours.setPrenom(inputPrenom.Text);
+                utilisateurEnCours.Nom = inputNom.Text;
+                utilisateurEnCours.Prenom = inputPrenom.Text;
 
                 MessageBox.Show("Modification réussie.", "Modification des informations", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ControleProfil.SelectedTab = consulterProfil;
+
+                PPEDataBase.Utilisateur.UpdateOne(utilisateurEnCours);
 
                 actualiserInformations();
             }
@@ -58,15 +43,17 @@ namespace PPE
 
         private void validerMDP_Click(object sender, EventArgs e)
         {
-            if(Encodage.ConversionSHA256(inputMDPold.Text) == utilisateurEnCours.getMotDePasse())
+            if(Encodage.ConversionSHA256(inputMDPold.Text) == utilisateurEnCours.MotDePasse)
             {
-                if (inputMDP.Text.Length > 3)
+                if (inputMDP.Text.Length >= 4)
                 {
                     string encodageMDP = Encodage.ConversionSHA256(inputMDP.Text);
-                    utilisateurEnCours.setMotDePasse(encodageMDP);
+                    utilisateurEnCours.MotDePasse = encodageMDP;
 
                     MessageBox.Show("Modification réussie.", "Changement de mot de passe", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ControleProfil.SelectedTab = consulterProfil;
+
+                    PPEDataBase.Utilisateur.UpdateOne(utilisateurEnCours);
 
                     actualiserInformations();
                 }
@@ -79,6 +66,23 @@ namespace PPE
             {
                 MessageBox.Show("Les mots de passe ne correspondent pas.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        public void actualiserInformations()
+        {
+            titreProfil.Text = "Profil de " + utilisateurEnCours.Login;
+            labelNom.Text = utilisateurEnCours.Nom + " " + utilisateurEnCours.Prenom;
+            labelScore.Text = "Score : " + utilisateurEnCours.MeilleurScore;
+
+            string role = utilisateurEnCours.EstAdministrateur ? "Administrateur" : "Utilisateur";
+
+            labelRole.Text = "Vous êtes " + role;
+
+            //Suppression du texte dans les formulaires
+            inputMDP.Text = "";
+            inputMDPold.Text = "";
+            inputNom.Text = utilisateurEnCours.Nom;
+            inputPrenom.Text = utilisateurEnCours.Prenom;
         }
     }
 }
