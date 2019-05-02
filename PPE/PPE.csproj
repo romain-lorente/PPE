@@ -68,6 +68,8 @@
     <Compile Include="Forms\Form_Profil.Designer.cs">
       <DependentUpon>Form_Profil.cs</DependentUpon>
     </Compile>
+    <Compile Include="SQL\PPETableVerbe.cs" />
+    <Compile Include="SQL\PPETableMot.cs" />
     <Compile Include="SQL\PPEDataBase.cs" />
     <Compile Include="SQL\PPETableUtilisateur.cs" />
     <Compile Include="TypesMots\Adjectif.cs" />

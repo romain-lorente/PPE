@@ -18,11 +18,9 @@ namespace PPE
 
         public List<Utilisateur> SelectAll()
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM Utilisateur ORDER BY 1;", connexion);
-
             List<Utilisateur> liste = new List<Utilisateur>();
 
-            List<Dictionary<string, object>> results = SQLUtils.ReadResult(command);
+            List<Dictionary<string, object>> results = SQLUtils.ExecuteReader("SELECT * FROM Utilisateur ORDER BY 1;", connexion);
             foreach(Dictionary<string, object> row in results)
             {
                 string username = (string)row["username"];
@@ -40,9 +38,7 @@ namespace PPE
 
         public Utilisateur SelectOne(string usernameToFind)
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM Utilisateur WHERE username = '" + usernameToFind + "';", connexion);
-
-            List<Dictionary<string, object>> results = SQLUtils.ReadResult(command);
+            List<Dictionary<string, object>> results = SQLUtils.ExecuteReader("SELECT * FROM Utilisateur WHERE username = '" + usernameToFind + "';", connexion);
             if (results.Count > 0)
             {
                 Dictionary<string, object> row = results[0];
@@ -61,51 +57,43 @@ namespace PPE
 
         public void InsertOne(Utilisateur utilisateur)
         {
-            string sqlCommand = "INSERT INTO Utilisateur(username, password, nom, prenom, bstScore, isAdmin) VALUES ('{0}', '{1}', '{2}', '{3}', {4}, {5});";
+            string sqlCommand = string.Format(
+                "INSERT INTO Utilisateur(username, password, nom, prenom, bstScore, isAdmin) VALUES ('{0}', '{1}', '{2}', '{3}', {4}, {5});",
+                new object[]
+                {
+                    utilisateur.Login,
+                    utilisateur.MotDePasse,
+                    utilisateur.Nom,
+                    utilisateur.Prenom,
+                    utilisateur.MeilleurScore,
+                    utilisateur.EstAdministrateur ? 1 : 0
+                }
+            );
 
-            object[] args = new object[]
-            {
-                utilisateur.Login,
-                utilisateur.MotDePasse,
-                utilisateur.Nom,
-                utilisateur.Prenom,
-                utilisateur.MeilleurScore,
-                utilisateur.EstAdministrateur ? 1 : 0
-            };
-
-            sqlCommand = string.Format(sqlCommand, args);
-
-            SqlCommand command = new SqlCommand(sqlCommand, connexion);
-            command.ExecuteNonQuery();
+            SQLUtils.Execute(sqlCommand, connexion);
         }
 
         public void UpdateOne(Utilisateur utilisateur)
         {
-            string sqlCommand = "UPDATE Utilisateur SET password = '{1}', nom = '{2}',  prenom = '{3}', bstScore = {4}, isAdmin = {5} WHERE username = '{0}'";
+            string sqlCommand = string.Format(
+                "UPDATE Utilisateur SET password = '{1}', nom = '{2}',  prenom = '{3}', bstScore = {4}, isAdmin = {5} WHERE username = '{0}'",
+                new object[]
+                {
+                    utilisateur.Login,
+                    utilisateur.MotDePasse,
+                    utilisateur.Nom,
+                    utilisateur.Prenom,
+                    utilisateur.MeilleurScore,
+                    utilisateur.EstAdministrateur ? 1 : 0
+                }
+            );
 
-            object[] args = new object[]
-            {
-                utilisateur.Login,
-                utilisateur.MotDePasse,
-                utilisateur.Nom,
-                utilisateur.Prenom,
-                utilisateur.MeilleurScore,
-                utilisateur.EstAdministrateur ? 1 : 0
-            };
-
-            sqlCommand = string.Format(sqlCommand, args);
-
-            Console.WriteLine("Mise a jour dans la base de données: " + sqlCommand);
-
-
-            SqlCommand command = new SqlCommand(sqlCommand, connexion);
-            command.ExecuteNonQuery();
+            SQLUtils.Execute(sqlCommand, connexion);
         }
 
         public bool Existe(string usernameToFind)
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM Utilisateur WHERE username = '" + usernameToFind + "';", connexion);
-            List<Dictionary<string, object>> results = SQLUtils.ReadResult(command);
+            List<Dictionary<string, object>> results = SQLUtils.ExecuteReader("SELECT * FROM Utilisateur WHERE username = '" + usernameToFind + "';", connexion);
             return results.Count > 0;
         }
     }

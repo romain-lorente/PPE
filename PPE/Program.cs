@@ -18,9 +18,6 @@ namespace PPE
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            List<Mot> lesMots;
-            lesMots = new List<Mot>();
-
             PPEDataBase.Connexion();
 
             Form_Connexion connexion = new Form_Connexion();
@@ -29,7 +26,7 @@ namespace PPE
 
             if (connexion.Utilisateur != null)
             {
-                Application.Run(new Form1(lesMots, connexion.Utilisateur));
+                Application.Run(new Form1(connexion.Utilisateur));
             }
 
             PPEDataBase.Deconnexion();

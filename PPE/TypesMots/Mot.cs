@@ -8,54 +8,27 @@ namespace PPE
 {
     public class Mot
     {
-        private string texte;
-        //Masculin, féminin
-        private string genre;
+        public int Id { set; get; }
+
+        public string Texte { set; get; }
+        //Masculin, féminin, mixte
+        public string Genre { set; get; }
         //Singulier, pluriel, invariable
-        private string nombre;
+        public string Nombre { set; get; }
+
+        public Mot(int id, string texte, string genre, string nombre)
+        {
+            Id = id;
+            Texte = texte;
+            Genre = genre;
+            Nombre = nombre;
+        }
 
         public Mot(string texte, string genre, string nombre)
         {
-            this.texte = texte;
-            this.genre = genre;
-            this.nombre = nombre;
-        }
-
-        public Mot(string texte)
-        {
-            this.texte = texte;
-            this.genre = "";
-            this.nombre = "";
-        }
-
-        public string getTexte()
-        {
-            return this.texte;
-        }
-
-        public void setTexte(string texte)
-        {
-            this.texte = texte;
-        }
-
-        public string getGenre()
-        {
-            return this.genre;
-        }
-
-        public void setGenre(string genre)
-        {
-            this.genre = genre;
-        }
-
-        public string getNombre()
-        {
-            return this.nombre;
-        }
-
-        public void getNombre(string nombre)
-        {
-            this.nombre = nombre;
+            Texte = texte;
+            Genre = genre;
+            Nombre = nombre;
         }
     }
 }

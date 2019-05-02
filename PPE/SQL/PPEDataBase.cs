@@ -17,6 +17,8 @@ namespace PPE
         private static SqlConnection connexion;
 
         public static PPETableUtilisateur Utilisateur { private set; get; }
+        public static PPETableVerbe Verbe { private set; get; }
+        public static PPETableMot Mot { private set; get; }
 
         public static void Connexion()
         {
@@ -34,6 +36,8 @@ namespace PPE
 
             //Creation des differente tables
             Utilisateur = new PPETableUtilisateur(connexion);
+            Verbe = new PPETableVerbe(connexion);
+            Mot = new PPETableMot(connexion);
         }
 
         public static void Deconnexion()

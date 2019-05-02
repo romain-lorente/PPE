@@ -12,27 +12,28 @@ namespace PPE
 {
     public partial class Form_AjoutMot : Form
     {
-        private List<Mot> lesMots;
         private Utilisateur utilisateurEnCours;
 
-        public Form_AjoutMot(List<Mot> lesMots, Utilisateur utilisateurEnCours)
+        public Form_AjoutMot(Utilisateur utilisateurEnCours)
         {
-            this.lesMots = lesMots;
             this.utilisateurEnCours = utilisateurEnCours;
             InitializeComponent();
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            List<Mot> lesMots = PPEDataBase.Mot.SelectAll();
             foreach (Mot unMot in lesMots)
             {
-                string[] row = new string[] { unMot.getTexte(),
+                Console.WriteLine( (unMot ?? new PPE.Mot("null", "", "")).Texte );
+                /*
+                string[] row = new string[] { unMot.Texte,
                     unMot is Nom ? "Nom" :
                     unMot is Adjectif ? "Adjectif" :
                     unMot is Verbe ? "Verbe" :
                     "?"
                 };
-                listeMots.Rows.Add(row);
+                listeMots.Rows.Add(row);*/
             }
         }
 
@@ -41,17 +42,18 @@ namespace PPE
             Nom unNom = new Nom(texteNom.Text, genreNom.Text, nombreNom.Text, natureNom.Text);
             string[] row = new string[] { texteNom.Text, "Nom" };
             listeMots.Rows.Add(row);
-            lesMots.Add(unNom);
+            //lesMots.Add(unNom);
         }
 
         private void ajoutVerbe_Click(object sender, EventArgs e)
         {
-            string[] conjugaisonVerbe = new string[] { pers1SVerbe.Text, pers2SVerbe.Text, pers3SVerbe.Text,
-            pers1PVerbe.Text, pers2PVerbe.Text, pers3PVerbe.Text, };
+            Mot S1 = new Mot(pers1PVerbe.Text, "mixte", "singulier");
+
+            Mot[] conjugaisonVerbe = new Mot[] { S1 };
             Verbe unVerbe = new Verbe(infinitifVerbe.Text, fonctionVerbe.Text, conjugaisonVerbe);
             string[] row = new string[] { infinitifVerbe.Text, "Verbe" };
             listeMots.Rows.Add(row);
-            lesMots.Add(unVerbe);
+            //lesMots.Add(unVerbe);
         }
 
         private void ajoutAdjectif_Click(object sender, EventArgs e)
@@ -59,7 +61,7 @@ namespace PPE
             Adjectif unAdjectif = new Adjectif(texteAdjectif.Text, genreAdjectif.Text, nombreAdjectif.Text, fonctionAdjectif.Text);
             string[] row = new string[] { texteAdjectif.Text, "Adjectif" };
             listeMots.Rows.Add(row);
-            lesMots.Add(unAdjectif);
+            //lesMots.Add(unAdjectif);
         }
     }
 }

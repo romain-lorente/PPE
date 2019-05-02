@@ -6,36 +6,22 @@ using System.Threading.Tasks;
 
 namespace PPE
 {
-    class Verbe : Mot
+    public class Verbe : Mot
     {
         //Verbe d'action ou d'état
-        private string fonction;
-        private string[] conjugaison;
+        public string Fonction { set; get; }
+        public Mot[] Conjugaisons { set; get; }
 
-        public Verbe(string texte, string fonction, string[] conjugaison) : base(texte)
+        public Verbe(string texte, string fonction, Mot[] conjugaisons) : base(texte, "mixte", "inveriable")
         {
-            this.fonction = fonction;
-            this.conjugaison = conjugaison;
+            Fonction = fonction;
+            Conjugaisons = conjugaisons;
         }
 
-        public string getFonction()
+        public Verbe(int id, string texte, string fonction, Mot[] conjugaisons) : base(id, texte, "mixte", "inveriable")
         {
-            return this.fonction;
-        }
-
-        public void setFonction(string fonction)
-        {
-            this.fonction = fonction;
-        }
-
-        public string[] getConjugaison()
-        {
-            return this.conjugaison;
-        }
-
-        public void setConjugaison(string[] conjugaison)
-        {
-            this.conjugaison = conjugaison;
+            Fonction = fonction;
+            Conjugaisons = conjugaisons;
         }
     }
 }

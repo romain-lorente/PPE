@@ -9,9 +9,11 @@ namespace PPE
 {
     public class SQLUtils
     {
-        public static List<Dictionary<string, object>> ReadResult(SqlCommand command)
+        public static List<Dictionary<string, object>> ExecuteReader(string commandSql, SqlConnection connexion)
         {
             List<Dictionary<string, object>> results = new List<Dictionary<string, object>>();
+
+            SqlCommand command = new SqlCommand(commandSql, connexion);
 
             using (SqlDataReader reader = command.ExecuteReader())
             {
@@ -30,6 +32,12 @@ namespace PPE
             }
 
             return results;
+        }
+
+        public static void Execute(string commandSql, SqlConnection connexion)
+        {
+            SqlCommand command = new SqlCommand(commandSql, connexion);
+            command.ExecuteNonQuery();
         }
 
         public static void PrintResult(List<Dictionary<string, object>> results)
