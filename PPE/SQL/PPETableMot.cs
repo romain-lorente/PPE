@@ -35,6 +35,26 @@ namespace PPE
             return null;
         }
 
+        public Mot SelectOneByText(string texte)
+        {
+            string sqlCommand = string.Format(
+                "SELECT * FROM Mot WHERE texte = '{0}'",
+                new object[]
+                {
+                    texte
+                }
+            );
+
+            List<Dictionary<string, object>> results = SQLUtils.ExecuteReader(sqlCommand, connexion);
+
+            List<Mot> parsedResult = ParseResult(results);
+            if (parsedResult.Count > 0)
+            {
+                return parsedResult[0];
+            }
+            return null;
+        }
+
         public void InsertOne(Mot mot)
         {
             string sqlCommand = string.Format(

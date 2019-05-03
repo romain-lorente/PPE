@@ -68,5 +68,18 @@ namespace PPE
             listeMots.Rows.Add(row);
             //lesMots.Add(unAdjectif);
         }
+
+        private void ValiderPhrase_Click(object sender, EventArgs e)
+        {
+            string[] phrase = inputPhrase.Text.ToLower().Split(new char[] { ' ' });
+            foreach(string unMot in phrase)
+            {
+                Mot res = PPEDataBase.Mot.SelectOneByText(unMot);
+                if (res != null)
+                {
+                    Console.WriteLine("Mot trouvé : " + unMot);
+                }
+            }
+        }
     }
 }
