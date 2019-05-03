@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,11 +15,10 @@ namespace PPE
         [STAThread]
         static void Main()
         {
-            List<Mot> lesMots;
-            lesMots = new List<Mot>();
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            PPEDataBase.Connexion();
 
             Form_Connexion connexion = new Form_Connexion();
 
@@ -26,8 +26,10 @@ namespace PPE
 
             if (connexion.Utilisateur != null)
             {
-                Application.Run(new Form1(lesMots, connexion.Utilisateur));
+                Application.Run(new Form1(connexion.Utilisateur));
             }
+
+            PPEDataBase.Deconnexion();
         }
     }
 }

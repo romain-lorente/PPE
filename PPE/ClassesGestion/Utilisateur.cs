@@ -8,70 +8,37 @@ namespace PPE
 {
     public class Utilisateur
     {
-        private string login;
-        private string motDePasse;
+        public string Login { private set; get; }
+        public string MotDePasse { set; get; }
 
-        private string nom;
-        private string prenom;
+        public string Nom { set; get; }
+        public string Prenom { set; get; }
 
-        private int meilleurScore;
-        private bool estAdministrateur;
+        public int MeilleurScore { set; get; }
+        public bool EstAdministrateur { set; get; }
 
         public Utilisateur(string login, string motDePasse, string nom, string prenom, bool role)
         {
-            this.login = login;
-            this.motDePasse = motDePasse;
+            Login = login;
+            MotDePasse = motDePasse;
 
-            this.nom = nom;
-            this.prenom = prenom;
+            Nom = nom;
+            Prenom = prenom;
 
-            this.meilleurScore = 0;
-            this.estAdministrateur = role;
+            MeilleurScore = 0;
+            EstAdministrateur = role;
         }
 
-        public string getLogin()
+        public Utilisateur(string login, string motDePasse, string nom, string prenom, int meilleurScore, bool role)
         {
-            return this.login;
-        }
+            Login = login;
+            MotDePasse = motDePasse;
 
-        public string getMotDePasse()
-        {
-            return this.motDePasse;
-        }
+            Nom = nom;
+            Prenom = prenom;
 
-        public void setMotDePasse(string motDePasse)
-        {
-            this.motDePasse = motDePasse;
-        }
-
-        public string getNom()
-        {
-            return this.nom;
-        }
-
-        public void setNom(string nom)
-        {
-            this.nom = nom;
-        }
-
-        public string getPrenom()
-        {
-            return this.prenom;
-        }
-
-        public void setPrenom(string prenom)
-        {
-            this.prenom = prenom;
-        }
-
-        public int getScore()
-        {
-            return this.meilleurScore;
-        }
-
-        public bool getRole()
-        {
-            return this.estAdministrateur;
+            MeilleurScore = meilleurScore;
+            EstAdministrateur = role;
         }
     }
 }

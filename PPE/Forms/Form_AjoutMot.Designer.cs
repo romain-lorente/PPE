@@ -73,6 +73,9 @@
             this.tabSelection = new System.Windows.Forms.TabControl();
             this.tabMot = new System.Windows.Forms.TabPage();
             this.tabPhrase = new System.Windows.Forms.TabPage();
+            this.inputPhrase = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.ValiderPhrase = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.listeMots)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabNom.SuspendLayout();
@@ -80,6 +83,7 @@
             this.tabAdjectif.SuspendLayout();
             this.tabSelection.SuspendLayout();
             this.tabMot.SuspendLayout();
+            this.tabPhrase.SuspendLayout();
             this.SuspendLayout();
             // 
             // listeMots
@@ -530,6 +534,9 @@
             // 
             // tabPhrase
             // 
+            this.tabPhrase.Controls.Add(this.ValiderPhrase);
+            this.tabPhrase.Controls.Add(this.inputPhrase);
+            this.tabPhrase.Controls.Add(this.label17);
             this.tabPhrase.Location = new System.Drawing.Point(4, 22);
             this.tabPhrase.Name = "tabPhrase";
             this.tabPhrase.Padding = new System.Windows.Forms.Padding(3);
@@ -537,6 +544,32 @@
             this.tabPhrase.TabIndex = 1;
             this.tabPhrase.Text = "Phrase";
             this.tabPhrase.UseVisualStyleBackColor = true;
+            // 
+            // inputPhrase
+            // 
+            this.inputPhrase.Location = new System.Drawing.Point(9, 33);
+            this.inputPhrase.Name = "inputPhrase";
+            this.inputPhrase.Size = new System.Drawing.Size(773, 20);
+            this.inputPhrase.TabIndex = 3;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 17);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(97, 13);
+            this.label17.TabIndex = 2;
+            this.label17.Text = "Entrer une phrase :";
+            // 
+            // ValiderPhrase
+            // 
+            this.ValiderPhrase.Location = new System.Drawing.Point(9, 80);
+            this.ValiderPhrase.Name = "ValiderPhrase";
+            this.ValiderPhrase.Size = new System.Drawing.Size(773, 30);
+            this.ValiderPhrase.TabIndex = 9;
+            this.ValiderPhrase.Text = "Valider la phrase";
+            this.ValiderPhrase.UseVisualStyleBackColor = true;
+            this.ValiderPhrase.Click += new System.EventHandler(this.ValiderPhrase_Click);
             // 
             // Form_AjoutMot
             // 
@@ -547,7 +580,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form_AjoutMot";
-            this.Text = "Liste et ajout de mots";
+            this.Text = "Gestion du contenu";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.listeMots)).EndInit();
             this.tabControl1.ResumeLayout(false);
@@ -559,6 +592,8 @@
             this.tabAdjectif.PerformLayout();
             this.tabSelection.ResumeLayout(false);
             this.tabMot.ResumeLayout(false);
+            this.tabPhrase.ResumeLayout(false);
+            this.tabPhrase.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -610,5 +645,8 @@
         private System.Windows.Forms.TabControl tabSelection;
         private System.Windows.Forms.TabPage tabMot;
         private System.Windows.Forms.TabPage tabPhrase;
+        private System.Windows.Forms.Button ValiderPhrase;
+        private System.Windows.Forms.TextBox inputPhrase;
+        private System.Windows.Forms.Label label17;
     }
 }

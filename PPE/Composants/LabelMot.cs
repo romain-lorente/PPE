@@ -20,7 +20,7 @@ namespace PPE.Composants
             set
             {
                 mot = value;
-                Text = mot.getTexte();
+                Text = mot.Texte;
             }
         }
 

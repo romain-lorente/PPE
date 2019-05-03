@@ -103,7 +103,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form_Connexion";
             this.Text = "Connexion";
-            this.Load += new System.EventHandler(this.Form_Connexion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
