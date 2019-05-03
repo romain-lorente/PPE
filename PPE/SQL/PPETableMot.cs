@@ -38,18 +38,32 @@ namespace PPE
         public void InsertOne(Mot mot)
         {
             string sqlCommand = string.Format(
-                "INSERT INTO Mot(texte, genre, nombre) VALUES ('{0}', '{1}', '{2}');SELECT MAX(id) FROM Mot;",
+                "INSERT INTO Mot(texte, genre, nombre, type) VALUES ('{0}', '{1}', '{2}', '{3}');SELECT MAX(id) FROM Mot;",
                 new object[]
                 {
                     mot.Texte,
                     mot.Genre,
-                    mot.Nombre
+                    mot.Nombre,
+                    mot.GetType().Name
                 }
             );
 
             List<Dictionary<string, object>> result = SQLUtils.ExecuteReader(sqlCommand, connexion);
             if(result.Count > 0 && result[0].ContainsKey("id"))
                 mot.Id = (int)result[0]["id"];
+
+            if(mot is Verbe verbe)
+            {
+                PPEDataBase.Verbe.InsertOne(verbe);
+            }
+            else if(mot is Nom nom)
+            {
+
+            }
+            else if(mot is Adjectif adjectif)
+            {
+
+            }
         }
 
         public void UpdateOne(Mot mot)
@@ -82,11 +96,15 @@ namespace PPE
 
                 switch (type)
                 {
-                    case "verbe":
+                    case "Verbe":
                         liste.Add(PPEDataBase.Verbe.SelectOne(new Mot(id, texte, genre, nombre)));
                         break;
 
-                    case "conjugaison":
+                    case "Conjugaison":
+                        Conjugaison conjugaison = new Conjugaison(id, texte, genre, nombre);
+                        conjugaison.Verbe = PPEDataBase.Verbe.SelectOneForConjugaison(conjugaison);
+
+                        liste.Add(conjugaison);
                         break;
 
                     default:

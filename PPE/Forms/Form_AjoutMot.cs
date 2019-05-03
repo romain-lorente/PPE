@@ -25,7 +25,6 @@ namespace PPE
             List<Mot> lesMots = PPEDataBase.Mot.SelectAll();
             foreach (Mot unMot in lesMots)
             {
-                Console.WriteLine( (unMot ?? new PPE.Mot("null", "", "")).Texte );
                 /*
                 string[] row = new string[] { unMot.Texte,
                     unMot is Nom ? "Nom" :
@@ -47,9 +46,9 @@ namespace PPE
 
         private void ajoutVerbe_Click(object sender, EventArgs e)
         {
-            Mot S1 = new Mot(pers1PVerbe.Text, "mixte", "singulier");
+            Conjugaison S1 = new Conjugaison(pers1PVerbe.Text, "mixte", "singulier");
 
-            Mot[] conjugaisonVerbe = new Mot[] { S1 };
+            Conjugaison[] conjugaisonVerbe = new Conjugaison[] { S1 };
             Verbe unVerbe = new Verbe(infinitifVerbe.Text, fonctionVerbe.Text, conjugaisonVerbe);
             string[] row = new string[] { infinitifVerbe.Text, "Verbe" };
             listeMots.Rows.Add(row);
