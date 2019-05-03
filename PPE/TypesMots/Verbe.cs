@@ -10,18 +10,28 @@ namespace PPE
     {
         //Verbe d'action ou d'état
         public string Fonction { set; get; }
-        public Mot[] Conjugaisons { set; get; }
+        public Conjugaison[] Conjugaisons { set; get; }
 
-        public Verbe(string texte, string fonction, Mot[] conjugaisons) : base(texte, "mixte", "inveriable")
+        public Verbe(string texte, string fonction, Conjugaison[] conjugaisons) : base(texte, "mixte", "inveriable")
         {
             Fonction = fonction;
             Conjugaisons = conjugaisons;
+
+            foreach (Conjugaison conjugaison in conjugaisons)
+            {
+                conjugaison.Verbe = this;
+            }
         }
 
-        public Verbe(int id, string texte, string fonction, Mot[] conjugaisons) : base(id, texte, "mixte", "inveriable")
+        public Verbe(int id, string texte, string fonction, Conjugaison[] conjugaisons) : base(id, texte, "mixte", "inveriable")
         {
             Fonction = fonction;
             Conjugaisons = conjugaisons;
+
+            foreach(Conjugaison conjugaison in conjugaisons)
+            {
+                conjugaison.Verbe = this;
+            }
         }
     }
 }

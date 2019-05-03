@@ -25,8 +25,6 @@ namespace PPE
             List<Mot> lesMots = PPEDataBase.Mot.SelectAll();
             foreach (Mot unMot in lesMots)
             {
-                //Console.WriteLine( (unMot ?? new PPE.Mot("null", "", "")).Texte );
-                
                 string[] row = new string[] { unMot.Texte,
                     unMot is Nom ? "Nom" :
                     unMot is Adjectif ? "Adjectif" :
@@ -47,14 +45,15 @@ namespace PPE
 
         private void ajoutVerbe_Click(object sender, EventArgs e)
         {
-            Mot S1 = new Mot(pers1SVerbe.Text, "mixte", "singulier");
-            Mot S2 = new Mot(pers2SVerbe.Text, "mixte", "singulier");
-            Mot S3 = new Mot(pers3SVerbe.Text, "mixte", "singulier");
-            Mot P1 = new Mot(pers1PVerbe.Text, "mixte", "pluriel");
-            Mot P2 = new Mot(pers2PVerbe.Text, "mixte", "pluriel");
-            Mot P3 = new Mot(pers3PVerbe.Text, "mixte", "pluriel");
+            Conjugaison S1 = new Conjugaison(pers1SVerbe.Text, "mixte", "singulier");
+            Conjugaison S2 = new Conjugaison(pers2SVerbe.Text, "mixte", "singulier");
+            Conjugaison S3 = new Conjugaison(pers3SVerbe.Text, "mixte", "singulier");
+            Conjugaison P1 = new Conjugaison(pers1PVerbe.Text, "mixte", "pluriel");
+            Conjugaison P2 = new Conjugaison(pers2PVerbe.Text, "mixte", "pluriel");
+            Conjugaison P3 = new Conjugaison(pers3PVerbe.Text, "mixte", "pluriel");
 
-            Mot[] conjugaisonVerbe = new Mot[] { S1, S2, S3, P1, P2, P3 };
+            Conjugaison[] conjugaisonVerbe = new Conjugaison[] { S1, S2, S3, P1, P2, P3 };
+			
             Verbe unVerbe = new Verbe(infinitifVerbe.Text, fonctionVerbe.Text, conjugaisonVerbe);
             string[] row = new string[] { infinitifVerbe.Text, "Verbe" };
             listeMots.Rows.Add(row);
