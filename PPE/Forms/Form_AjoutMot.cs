@@ -57,7 +57,8 @@ namespace PPE
             Verbe unVerbe = new Verbe(infinitifVerbe.Text, fonctionVerbe.Text, conjugaisonVerbe);
             string[] row = new string[] { infinitifVerbe.Text, "Verbe" };
             listeMots.Rows.Add(row);
-            //lesMots.Add(unVerbe);
+
+            PPEDataBase.Mot.InsertOne(unVerbe);
         }
 
         private void ajoutAdjectif_Click(object sender, EventArgs e)
@@ -77,7 +78,14 @@ namespace PPE
                 Mot res = PPEDataBase.Mot.SelectOneByText(unMot);
                 if (res != null)
                 {
-                    Console.WriteLine("Mot trouvé : " + unMot);
+                    if(res is Verbe)
+                    {
+                        Console.WriteLine("Verbe : " + unMot);
+                    }
+                    else if(res is Conjugaison conjugaison)
+                    {
+                        Console.WriteLine("Conjugaison " + unMot + " (" + conjugaison.Personne + ") du verbe " + conjugaison.Verbe.Texte);
+                    }
                 }
             }
         }
