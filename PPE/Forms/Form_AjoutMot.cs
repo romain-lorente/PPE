@@ -68,6 +68,7 @@ namespace PPE
             //lesMots.Add(unAdjectif);
         }
 
+        //Trouve les différents mots dans la phrase
         private void ValiderPhrase_Click(object sender, EventArgs e)
         {
             string[] phrase = inputPhrase.Text.ToLower().Split(new char[] { ' ' });
