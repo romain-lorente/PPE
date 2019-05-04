@@ -18,8 +18,6 @@ namespace PPE
 
         public List<Mot> SelectAll()
         {
-            List<Mot> liste = new List<Mot>();
-
             List<Dictionary<string, object>> results = SQLUtils.ExecuteReader("SELECT * FROM Mot ORDER BY 1;", connexion);
             return ParseResult(results);
         }
@@ -35,7 +33,7 @@ namespace PPE
             return null;
         }
 
-        public Mot SelectOneByText(string texte)
+        public List<Mot> SelectByText(string texte)
         {
             string sqlCommand = string.Format(
                 "SELECT * FROM Mot WHERE texte = '{0}'",
@@ -46,19 +44,13 @@ namespace PPE
             );
 
             List<Dictionary<string, object>> results = SQLUtils.ExecuteReader(sqlCommand, connexion);
-
-            List<Mot> parsedResult = ParseResult(results);
-            if (parsedResult.Count > 0)
-            {
-                return parsedResult[0];
-            }
-            return null;
+            return ParseResult(results);
         }
 
         public void InsertOne(Mot mot)
         {
             string sqlCommand = string.Format(
-                "INSERT INTO Mot(texte, genre, nombre, type) VALUES ('{0}', '{1}', '{2}', '{3}');SELECT MAX(id) FROM Mot;",
+                "INSERT INTO Mot(texte, genre, nombre, type) VALUES ('{0}', '{1}', '{2}', '{3}');SELECT MAX(id) AS id FROM Mot;",
                 new object[]
                 {
                     mot.Texte,

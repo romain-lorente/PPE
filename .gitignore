@@ -1,7 +1,9 @@
 
-.vs/
-PPE/bin/
-PPE/obj/
-PPE/PPE.csproj
-PPE/Properties/
-PPE/SQL/PPEDataBase.cs
+.vs\
+PPE\bin\
+PPE\obj\
+PPE\PPE.csproj
+PPE\Properties\
+PPE\SQL\PPEDataBase.cs
+PPE/obj/Debug/PPE.pdb
+PPE/obj/Debug/PPE.exe

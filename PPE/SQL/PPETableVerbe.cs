@@ -53,10 +53,11 @@ namespace PPE
             foreach(Mot conjugaison in verbe.Conjugaisons)
             {
                 PPEDataBase.Mot.InsertOne(conjugaison);
+                Console.WriteLine(conjugaison.Id);
             }
 
             string sqlCommand = string.Format(
-                "INSERT INTO Verbe(idMot, idMot_1S, idMot_2S, idMot_3S, idMot_1P, idMot_2P, idMot_3P, fonction) VALUES ({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7});",
+                "INSERT INTO Verbe(idMot, idMot_1S, idMot_2S, idMot_3S, idMot_1P, idMot_2P, idMot_3P, fonction) VALUES ({0}, {1}, {2}, {3}, {4}, {5}, {6}, '{7}');",
                 new object[]
                 {
                     verbe.Id,

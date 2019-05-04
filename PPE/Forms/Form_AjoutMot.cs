@@ -25,13 +25,16 @@ namespace PPE
             List<Mot> lesMots = PPEDataBase.Mot.SelectAll();
             foreach (Mot unMot in lesMots)
             {
-                string[] row = new string[] { unMot.Texte,
-                    unMot is Nom ? "Nom" :
-                    unMot is Adjectif ? "Adjectif" :
-                    unMot is Verbe ? "Verbe" :
-                    "?"
-                };
-                listeMots.Rows.Add(row);
+                if (unMot != null)
+                {
+                    string[] row = new string[] { unMot.Texte,
+                        unMot is Nom ? "Nom" :
+                        unMot is Adjectif ? "Adjectif" :
+                        unMot is Verbe ? "Verbe" :
+                        "?"
+                    };
+                    listeMots.Rows.Add(row);
+                }
             }
         }
 
@@ -57,7 +60,8 @@ namespace PPE
             Verbe unVerbe = new Verbe(infinitifVerbe.Text, fonctionVerbe.Text, conjugaisonVerbe);
             string[] row = new string[] { infinitifVerbe.Text, "Verbe" };
             listeMots.Rows.Add(row);
-            //lesMots.Add(unVerbe);
+
+            PPEDataBase.Mot.InsertOne(unVerbe);
         }
 
         private void ajoutAdjectif_Click(object sender, EventArgs e)
@@ -73,12 +77,39 @@ namespace PPE
             string[] phrase = inputPhrase.Text.ToLower().Split(new char[] { ' ' });
             foreach(string unMot in phrase)
             {
-                Mot res = PPEDataBase.Mot.SelectOneByText(unMot);
-                if (res != null)
+                List<Mot> res = PPEDataBase.Mot.SelectByText(unMot);
+                if(res.Count > 1)
                 {
-                    Console.WriteLine("Mot trouvé : " + unMot);
+                    Console.WriteLine("Different mot trouvés pour " + unMot + ":");
+                    for(int i = 0; i < res.Count; i++)
+                    {
+                        Console.WriteLine("\t[" + (i + 1) + "] " + GetWordInfos(res[i]) + ".");
+                    }
+                }
+                else if(res.Count > 0)
+                {
+                    Console.WriteLine("Un seul mot trouvé pour " + unMot + ": ");
+                    Console.WriteLine("\t" + GetWordInfos(res[0]) + ".");
+                }
+                else
+                {
+                    Console.WriteLine("Aucun mot trouvé pour " + unMot + ".");
                 }
             }
+        }
+
+        private string GetWordInfos(Mot mot)
+        {
+            if (mot is Verbe verbe)
+            {
+                return "verbe " + verbe.Texte;
+            }
+            if (mot is Conjugaison conjugaison)
+            {
+                return "conjugaison " + conjugaison.Personne + " du verbe " + conjugaison.Verbe.Texte;
+            }
+
+            return "?";
         }
     }
 }
