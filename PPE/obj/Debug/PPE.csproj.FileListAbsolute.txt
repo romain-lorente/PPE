@@ -26,3 +26,6 @@ D:\Cours - Programmation\C#\PPE\PPE\obj\Debug\PPE.csproj.GenerateResource.cache
 D:\Cours - Programmation\C#\PPE\PPE\obj\Debug\PPE.csproj.CoreCompileInputs.cache
 D:\Cours - Programmation\C#\PPE\PPE\obj\Debug\PPE.exe
 D:\Cours - Programmation\C#\PPE\PPE\obj\Debug\PPE.pdb
+D:\Programmations\C#\PPE\PPE-CSharp\bin\PPE.exe.config
+D:\Programmations\C#\PPE\PPE-CSharp\bin\PPE.exe
+D:\Programmations\C#\PPE\PPE-CSharp\bin\PPE.pdb

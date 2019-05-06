@@ -23,7 +23,7 @@ namespace PPE
 
         public override string ToString()
         {
-            return Texte + " : adjectif " + fonction + ", " + Genre + " " + Nombre;
+            return Texte + " : adjectif " + Fonction + ", " + Genre + " " + Nombre;
         }
     }
 }
