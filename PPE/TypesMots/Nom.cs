@@ -23,7 +23,7 @@ namespace PPE
 
         public override string ToString()
         {
-            return Texte + " nom " + Nature + ", " + Genre + " " + Nombre;
+            return Texte + " : nom " + Nature + ", " + Genre + " " + Nombre;
         }
     }
 }

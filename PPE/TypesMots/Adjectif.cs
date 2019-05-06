@@ -20,5 +20,10 @@ namespace PPE
         {
             Fonction = fonction;
         }
+
+        public override string ToString()
+        {
+            return Texte + " : adjectif " + fonction + ", " + Genre + " " + Nombre;
+        }
     }
 }
