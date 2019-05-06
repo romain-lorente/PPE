@@ -73,8 +73,10 @@
             this.tabSelection = new System.Windows.Forms.TabControl();
             this.tabMot = new System.Windows.Forms.TabPage();
             this.tabPhrase = new System.Windows.Forms.TabPage();
+            this.AnalyserPhrase = new System.Windows.Forms.Button();
             this.inputPhrase = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
+            this.formulaireComplementPhrase = new System.Windows.Forms.Panel();
             this.ValiderPhrase = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.listeMots)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -535,6 +537,8 @@
             // tabPhrase
             // 
             this.tabPhrase.Controls.Add(this.ValiderPhrase);
+            this.tabPhrase.Controls.Add(this.formulaireComplementPhrase);
+            this.tabPhrase.Controls.Add(this.AnalyserPhrase);
             this.tabPhrase.Controls.Add(this.inputPhrase);
             this.tabPhrase.Controls.Add(this.label17);
             this.tabPhrase.Location = new System.Drawing.Point(4, 22);
@@ -545,11 +549,21 @@
             this.tabPhrase.Text = "Phrase";
             this.tabPhrase.UseVisualStyleBackColor = true;
             // 
+            // AnalyserPhrase
+            // 
+            this.AnalyserPhrase.Location = new System.Drawing.Point(666, 33);
+            this.AnalyserPhrase.Name = "AnalyserPhrase";
+            this.AnalyserPhrase.Size = new System.Drawing.Size(116, 20);
+            this.AnalyserPhrase.TabIndex = 9;
+            this.AnalyserPhrase.Text = "Analyser";
+            this.AnalyserPhrase.UseVisualStyleBackColor = true;
+            this.AnalyserPhrase.Click += new System.EventHandler(this.ValiderPhrase_Click);
+            // 
             // inputPhrase
             // 
             this.inputPhrase.Location = new System.Drawing.Point(9, 33);
             this.inputPhrase.Name = "inputPhrase";
-            this.inputPhrase.Size = new System.Drawing.Size(773, 20);
+            this.inputPhrase.Size = new System.Drawing.Size(651, 20);
             this.inputPhrase.TabIndex = 3;
             // 
             // label17
@@ -561,12 +575,20 @@
             this.label17.TabIndex = 2;
             this.label17.Text = "Entrer une phrase :";
             // 
+            // formulaireComplementPhrase
+            // 
+            this.formulaireComplementPhrase.AutoScroll = true;
+            this.formulaireComplementPhrase.Location = new System.Drawing.Point(9, 59);
+            this.formulaireComplementPhrase.Name = "formulaireComplementPhrase";
+            this.formulaireComplementPhrase.Size = new System.Drawing.Size(773, 340);
+            this.formulaireComplementPhrase.TabIndex = 11;
+            // 
             // ValiderPhrase
             // 
-            this.ValiderPhrase.Location = new System.Drawing.Point(9, 80);
+            this.ValiderPhrase.Location = new System.Drawing.Point(9, 405);
             this.ValiderPhrase.Name = "ValiderPhrase";
-            this.ValiderPhrase.Size = new System.Drawing.Size(773, 30);
-            this.ValiderPhrase.TabIndex = 9;
+            this.ValiderPhrase.Size = new System.Drawing.Size(773, 29);
+            this.ValiderPhrase.TabIndex = 12;
             this.ValiderPhrase.Text = "Valider la phrase";
             this.ValiderPhrase.UseVisualStyleBackColor = true;
             this.ValiderPhrase.Click += new System.EventHandler(this.ValiderPhrase_Click);
@@ -645,8 +667,10 @@
         private System.Windows.Forms.TabControl tabSelection;
         private System.Windows.Forms.TabPage tabMot;
         private System.Windows.Forms.TabPage tabPhrase;
-        private System.Windows.Forms.Button ValiderPhrase;
+        private System.Windows.Forms.Button AnalyserPhrase;
         private System.Windows.Forms.TextBox inputPhrase;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Panel formulaireComplementPhrase;
+        private System.Windows.Forms.Button ValiderPhrase;
     }
 }

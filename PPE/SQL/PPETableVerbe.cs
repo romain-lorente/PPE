@@ -15,7 +15,7 @@ namespace PPE
         {
             this.connexion = connexion;
         }
-		
+
         public Verbe SelectOneForConjugaison(Conjugaison conjugaison)
         {
             string sqlCommand = string.Format(
@@ -45,12 +45,12 @@ namespace PPE
                 return parsedResults[0];
             }
 
-            return null; 
+            return null;
         }
 
         public void InsertOne(Verbe verbe)
         {
-            foreach(Mot conjugaison in verbe.Conjugaisons)
+            foreach (Mot conjugaison in verbe.Conjugaisons)
             {
                 PPEDataBase.Mot.InsertOne(conjugaison);
                 Console.WriteLine(conjugaison.Id);

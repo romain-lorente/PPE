@@ -41,9 +41,11 @@ namespace PPE
         private void ajoutNom_Click(object sender, EventArgs e)
         {
             Nom unNom = new Nom(texteNom.Text, genreNom.Text, nombreNom.Text, natureNom.Text);
+
             string[] row = new string[] { texteNom.Text, "Nom" };
             listeMots.Rows.Add(row);
-            //lesMots.Add(unNom);
+
+            PPEDataBase.Mot.InsertOne(unNom);
         }
 
         private void ajoutVerbe_Click(object sender, EventArgs e)
@@ -58,6 +60,7 @@ namespace PPE
             Conjugaison[] conjugaisonVerbe = new Conjugaison[] { S1, S2, S3, P1, P2, P3 };
 			
             Verbe unVerbe = new Verbe(infinitifVerbe.Text, fonctionVerbe.Text, conjugaisonVerbe);
+
             string[] row = new string[] { infinitifVerbe.Text, "Verbe" };
             listeMots.Rows.Add(row);
 
@@ -67,36 +70,16 @@ namespace PPE
         private void ajoutAdjectif_Click(object sender, EventArgs e)
         {
             Adjectif unAdjectif = new Adjectif(texteAdjectif.Text, genreAdjectif.Text, nombreAdjectif.Text, fonctionAdjectif.Text);
+
             string[] row = new string[] { texteAdjectif.Text, "Adjectif" };
             listeMots.Rows.Add(row);
-            //lesMots.Add(unAdjectif);
+
+            PPEDataBase.Mot.InsertOne(unAdjectif);
         }
 
-        //Trouve les différents mots dans la phrase
         private void ValiderPhrase_Click(object sender, EventArgs e)
         {
-            string[] phrase = inputPhrase.Text.ToLower().Split(new char[] { ' ' });
-            foreach(string unMot in phrase)
-            {
-                List<Mot> res = PPEDataBase.Mot.SelectByText(unMot);
-                if(res.Count > 1)
-                {
-                    Console.WriteLine("Different mot trouvés pour " + unMot + ":");
-                    for(int i = 0; i < res.Count; i++)
-                    {
-                        Console.WriteLine("\t[" + (i + 1) + "] " + GetWordInfos(res[i]) + ".");
-                    }
-                }
-                else if(res.Count > 0)
-                {
-                    Console.WriteLine("Un seul mot trouvé pour " + unMot + ": ");
-                    Console.WriteLine("\t" + GetWordInfos(res[0]) + ".");
-                }
-                else
-                {
-                    Console.WriteLine("Aucun mot trouvé pour " + unMot + ".");
-                }
-            }
+
         }
 
         private string GetWordInfos(Mot mot)
@@ -111,6 +94,11 @@ namespace PPE
             }
 
             return "?";
+        }
+
+        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+
         }
     }
 }

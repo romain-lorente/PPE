@@ -9,21 +9,16 @@ namespace PPE
     class Nom : Mot
     {
         //Propre, commun
-        private string nature;
+        public string Nature { get; set; }
 
         public Nom(string texte, string genre, string nombre, string nature) : base(texte, genre, nombre)
         {
-            this.nature = nature;
+            Nature = nature;
         }
 
-        public string getNature()
+        public Nom(int id, string texte, string genre, string nombre, string nature) : base(id, texte, genre, nombre)
         {
-            return this.nature;
-        }
-
-        public void setNature(string nature)
-        {
-            this.nature = nature;
+            Nature = nature;
         }
     }
 }
