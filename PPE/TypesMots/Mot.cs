@@ -30,5 +30,10 @@ namespace PPE
             Genre = genre;
             Nombre = nombre;
         }
+
+        public override string ToString()
+        {
+            return Texte + " : mot " + Genre + " " + Nombre;
+        }
     }
 }
