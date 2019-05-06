@@ -20,5 +20,10 @@ namespace PPE
         {
             Nature = nature;
         }
+
+        public override string ToString()
+        {
+            return Texte + " : nom " + Nature + ", " + Genre + " " + Nombre;
+        }
     }
 }

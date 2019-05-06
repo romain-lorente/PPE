@@ -25,5 +25,10 @@ namespace PPE
         {
             this.fonction = fonction;
         }
+
+        public override string ToString()
+        {
+            return Texte + " : adjectif " + fonction + ", " + Genre + " " + Nombre;
+        }
     }
 }

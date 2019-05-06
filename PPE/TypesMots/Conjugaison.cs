@@ -62,5 +62,10 @@ namespace PPE
                 }
             }
         }
+
+        public override string ToString()
+        {
+            return Texte + " : conjugaison à la " + Personne + " du verbe " + Verbe.Texte;
+        }
     }
 }

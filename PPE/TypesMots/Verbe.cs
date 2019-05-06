@@ -33,5 +33,10 @@ namespace PPE
                 conjugaison.Verbe = this;
             }
         }
+
+        public override string ToString()
+        {
+            return Texte + " : verbe d'" + Fonction;
+        }
     }
 }

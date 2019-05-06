@@ -77,23 +77,110 @@ namespace PPE
             PPEDataBase.Mot.InsertOne(unAdjectif);
         }
 
-        private void ValiderPhrase_Click(object sender, EventArgs e)
-        {
+        Dictionary<ComboBox, int> comboBoxes = new Dictionary<ComboBox, int> { };
+        Mot[] motDansPhrase = null;
 
+        private void AnalyserPhrase_Click(object sender, EventArgs e)
+        {
+            string[] phrase = inputPhrase.Text.ToLower().Split(new char[] { ' ' });
+            motDansPhrase = new Mot[phrase.Length];
+            comboBoxes = new Dictionary<ComboBox, int> { };
+
+            formulaireComplementPhrase.Controls.Clear();
+
+            for (int i = 0; i < phrase.Length; i++)
+            {
+                string unMot = phrase[i];
+                int y = i * 30;
+
+                List<Mot> res = PPEDataBase.Mot.SelectByText(unMot);
+
+                if (res.Count > 1)
+                {
+                    Label label = new Label();
+                    label.AutoSize = true;
+                    label.Text = "Différents mots trouvés pour " + unMot + ": ";
+                    label.Location = new Point(0, y);
+
+                    formulaireComplementPhrase.Controls.Add(label);
+
+                    motDansPhrase[i] = null;
+
+                    //Création d'une ComboBox pour régler le conflit de mots
+                    ComboBox choix = new ComboBox();
+                    choix.DropDownStyle = ComboBoxStyle.DropDownList;
+                    choix.FormattingEnabled = true;
+
+                    choix.Items.AddRange(res.ToArray());
+
+                    choix.Location = new Point(label.Size.Width + 20, y);
+                    choix.Size = new Size(450, 25);
+
+                    formulaireComplementPhrase.Controls.Add(choix);
+
+                    //Ajout de la ComboBox dans le dictionnaire
+                    comboBoxes.Add(choix, i);
+
+                    //EventHandler pour la gestion des conflits
+                    choix.SelectedIndexChanged += new EventHandler(ComboBoxConflictChangedIndex);
+                }
+                else if (res.Count > 0)
+                {
+                    Label label = new Label();
+                    label.AutoSize = true;
+                    label.Text = "Un seul mot trouvé pour " + res[0];
+                    label.Location = new Point(0, y);
+
+                    formulaireComplementPhrase.Controls.Add(label);
+
+                    motDansPhrase[i] = res[0];
+                }
+                else
+                {
+                    Label label = new Label();
+                    label.AutoSize = true;
+                    label.Text = "Aucun mot trouvé pour " + unMot + ".";
+                    label.Location = new Point(0, y);
+
+                    formulaireComplementPhrase.Controls.Add(label);
+
+                    motDansPhrase[i] = null;
+                }
+                y += 30;
+            }
         }
 
-        private string GetWordInfos(Mot mot)
+        private void ComboBoxConflictChangedIndex(object sender, EventArgs e)
         {
-            if (mot is Verbe verbe)
+            ComboBox maComboBox = (ComboBox)sender;
+
+            //On récupère la position du mot concerné par le conflit
+            int res = comboBoxes[maComboBox];
+
+            motDansPhrase[res] = (Mot)maComboBox.SelectedItem;
+        }
+
+        private void ValiderPhrase_Click(object sender, EventArgs e)
+        {
+            bool validation = true;
+
+            foreach(Mot unMot in motDansPhrase)
             {
-                return "verbe " + verbe.Texte;
-            }
-            if (mot is Conjugaison conjugaison)
-            {
-                return "conjugaison " + conjugaison.Personne + " du verbe " + conjugaison.Verbe.Texte;
+                if (unMot == null)
+                {
+                    validation = false;
+                    break;
+                }
             }
 
-            return "?";
+            if(validation)
+            {
+                //TODO
+            }
+            else
+            {
+                MessageBox.Show("La phrase comporte des conflits de mots ou des mots inexistants.", "Erreur d'insertion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
