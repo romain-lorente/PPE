@@ -9,7 +9,7 @@ namespace PPE
 {
     public class PPEDataBase
     {
-        private const string ADRESSE = "DESKTOP-VM2DUPG\\MSSQLSERVER01";
+        private const string ADRESSE = "localhost"; //DESKTOP-VM2DUPG\\MSSQLSERVER01 pour romain
         private const string DATABASE = "PPE";
         private const string USERNAME = "Romain";
         private const string PASSWORD = "Epsi2019";
