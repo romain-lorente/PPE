@@ -19,6 +19,8 @@ namespace PPE
         public static PPETableUtilisateur Utilisateur { private set; get; }
         public static PPETableVerbe Verbe { private set; get; }
         public static PPETableMot Mot { private set; get; }
+        public static PPETableNom Nom { private set; get; }
+        public static PPETableAdjectif Adjectif { private set; get; }
 
         public static void Connexion()
         {
@@ -38,6 +40,8 @@ namespace PPE
             Utilisateur = new PPETableUtilisateur(connexion);
             Verbe = new PPETableVerbe(connexion);
             Mot = new PPETableMot(connexion);
+            Nom = new PPETableNom(connexion);
+            Adjectif = new PPETableAdjectif(connexion);
         }
 
         public static void Deconnexion()

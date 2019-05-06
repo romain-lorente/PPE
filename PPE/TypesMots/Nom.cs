@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PPE
 {
-    class Nom : Mot
+    public class Nom : Mot
     {
         //Propre, commun
         public string Nature { get; set; }
@@ -19,6 +19,11 @@ namespace PPE
         public Nom(int id, string texte, string genre, string nombre, string nature) : base(id, texte, genre, nombre)
         {
             Nature = nature;
+        }
+
+        public override string ToString()
+        {
+            return Texte + " nom " + Nature + ", " + Genre + " " + Nombre;
         }
     }
 }

@@ -70,28 +70,12 @@ namespace PPE
             }
             else if(mot is Nom nom)
             {
-
+                PPEDataBase.Nom.InsertOne(nom);
             }
             else if(mot is Adjectif adjectif)
             {
-
+                PPEDataBase.Adjectif.InsertOne(adjectif);
             }
-        }
-
-        public void UpdateOne(Mot mot)
-        {
-            string sqlCommand = string.Format(
-                "UPDATE Utilisateur SET password = '{1}', nom = '{2}',  prenom = '{3}', bstScore = {4}, isAdmin = {5} WHERE username = '{0}'",
-                new object[]
-                {
-                    mot.Id,
-                    mot.Texte,
-                    mot.Genre,
-                    mot.Nombre
-                }
-            );
-
-            SQLUtils.Execute(sqlCommand, connexion);
         }
 
         private List<Mot> ParseResult(List<Dictionary<string, object>> results)
@@ -117,6 +101,14 @@ namespace PPE
                         conjugaison.Verbe = PPEDataBase.Verbe.SelectOneForConjugaison(conjugaison);
 
                         liste.Add(conjugaison);
+                        break;
+
+                    case "Nom":
+                        liste.Add(PPEDataBase.Nom.SelectOne(new Mot(id, texte, genre, nombre)));
+                        break;
+
+                    case "Adjectif":
+                        liste.Add(PPEDataBase.Adjectif.SelectOne(new Mot(id, texte, genre, nombre)));
                         break;
 
                     default:

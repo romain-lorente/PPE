@@ -6,24 +6,19 @@ using System.Threading.Tasks;
 
 namespace PPE
 {
-    class Adjectif : Mot
+    public class Adjectif : Mot
     {
         //Qualificatif, démonstratif, possessif...
-        private string fonction;
+        public string Fonction;
 
         public Adjectif(string texte, string genre, string nombre, string fonction) : base(texte, genre, nombre)
         {
-            this.fonction = fonction;
+            Fonction = fonction;
         }
 
-        public string getFonction()
+        public Adjectif(int id, string texte, string genre, string nombre, string fonction) : base(id, texte, genre, nombre)
         {
-            return this.fonction;
-        }
-
-        public void setFonction(string fonction)
-        {
-            this.fonction = fonction;
+            Fonction = fonction;
         }
     }
 }

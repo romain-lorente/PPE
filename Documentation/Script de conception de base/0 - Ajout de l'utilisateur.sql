@@ -1,0 +1,5 @@
+CREATE LOGIN Quentin   
+    WITH PASSWORD = 'Epsi2019';  
+GO
+
+CREATE USER Quentin;

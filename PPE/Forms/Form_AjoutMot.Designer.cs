@@ -73,11 +73,11 @@
             this.tabSelection = new System.Windows.Forms.TabControl();
             this.tabMot = new System.Windows.Forms.TabPage();
             this.tabPhrase = new System.Windows.Forms.TabPage();
+            this.ValiderPhrase = new System.Windows.Forms.Button();
+            this.formulaireComplementPhrase = new System.Windows.Forms.Panel();
             this.AnalyserPhrase = new System.Windows.Forms.Button();
             this.inputPhrase = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.formulaireComplementPhrase = new System.Windows.Forms.Panel();
-            this.ValiderPhrase = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.listeMots)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabNom.SuspendLayout();
@@ -549,6 +549,24 @@
             this.tabPhrase.Text = "Phrase";
             this.tabPhrase.UseVisualStyleBackColor = true;
             // 
+            // ValiderPhrase
+            // 
+            this.ValiderPhrase.Location = new System.Drawing.Point(9, 405);
+            this.ValiderPhrase.Name = "ValiderPhrase";
+            this.ValiderPhrase.Size = new System.Drawing.Size(773, 29);
+            this.ValiderPhrase.TabIndex = 12;
+            this.ValiderPhrase.Text = "Valider la phrase";
+            this.ValiderPhrase.UseVisualStyleBackColor = true;
+            this.ValiderPhrase.Click += new System.EventHandler(this.ValiderPhrase_Click);
+            // 
+            // formulaireComplementPhrase
+            // 
+            this.formulaireComplementPhrase.AutoScroll = true;
+            this.formulaireComplementPhrase.Location = new System.Drawing.Point(9, 59);
+            this.formulaireComplementPhrase.Name = "formulaireComplementPhrase";
+            this.formulaireComplementPhrase.Size = new System.Drawing.Size(773, 340);
+            this.formulaireComplementPhrase.TabIndex = 11;
+            // 
             // AnalyserPhrase
             // 
             this.AnalyserPhrase.Location = new System.Drawing.Point(666, 33);
@@ -557,7 +575,7 @@
             this.AnalyserPhrase.TabIndex = 9;
             this.AnalyserPhrase.Text = "Analyser";
             this.AnalyserPhrase.UseVisualStyleBackColor = true;
-            this.AnalyserPhrase.Click += new System.EventHandler(this.ValiderPhrase_Click);
+            this.AnalyserPhrase.Click += new System.EventHandler(this.AnalyserPhrase_Click);
             // 
             // inputPhrase
             // 
@@ -574,24 +592,6 @@
             this.label17.Size = new System.Drawing.Size(97, 13);
             this.label17.TabIndex = 2;
             this.label17.Text = "Entrer une phrase :";
-            // 
-            // formulaireComplementPhrase
-            // 
-            this.formulaireComplementPhrase.AutoScroll = true;
-            this.formulaireComplementPhrase.Location = new System.Drawing.Point(9, 59);
-            this.formulaireComplementPhrase.Name = "formulaireComplementPhrase";
-            this.formulaireComplementPhrase.Size = new System.Drawing.Size(773, 340);
-            this.formulaireComplementPhrase.TabIndex = 11;
-            // 
-            // ValiderPhrase
-            // 
-            this.ValiderPhrase.Location = new System.Drawing.Point(9, 405);
-            this.ValiderPhrase.Name = "ValiderPhrase";
-            this.ValiderPhrase.Size = new System.Drawing.Size(773, 29);
-            this.ValiderPhrase.TabIndex = 12;
-            this.ValiderPhrase.Text = "Valider la phrase";
-            this.ValiderPhrase.UseVisualStyleBackColor = true;
-            this.ValiderPhrase.Click += new System.EventHandler(this.ValiderPhrase_Click);
             // 
             // Form_AjoutMot
             // 

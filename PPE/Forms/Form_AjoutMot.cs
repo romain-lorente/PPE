@@ -77,7 +77,72 @@ namespace PPE
             PPEDataBase.Mot.InsertOne(unAdjectif);
         }
 
+        //Trouve les différents mots dans la phrase
+        private void AnalyserPhrase_Click(object sender, EventArgs e)
+        {
+            string[] phrase = inputPhrase.Text.ToLower().Split(new char[] { ' ' });
+            Mot[] motDansPhrase = new Mot[phrase.Length];
+
+            formulaireComplementPhrase.Controls.Clear();
+
+            //Dictionary<int, ComboBox> comboBoxs = new
+
+            for (int i = 0; i < phrase.Length; i++)
+            {
+                string unMot = phrase[i];
+                int y = i * 30;
+
+                List<Mot> res = PPEDataBase.Mot.SelectByText(unMot);
+                if (res.Count > 1)
+                {
+                    Label label = new Label();
+                    label.AutoSize = true;
+                    label.Text = "Different mot trouvés pour " + unMot + ":";
+                    label.Location = new Point(0, y);
+
+                    formulaireComplementPhrase.Controls.Add(label);
+                    //Console.WriteLine();
+                    /*for(int i = 0; i < res.Count; i++)
+                    {
+                        Console.WriteLine("\t[" + (i + 1) + "] " + GetWordInfos(res[i]) + ".");
+                    }*/
+
+                    motDansPhrase[i] = null;
+                }
+                else if (res.Count > 0)
+                {
+                    Label label = new Label();
+                    label.AutoSize = true;
+                    label.Text = "Un seul mot trouvé pour " + unMot + ": ";
+                    label.Location = new Point(0, y);
+
+                    formulaireComplementPhrase.Controls.Add(label);
+
+                    motDansPhrase[i] = res[0];
+                    //Console.WriteLine("Un seul mot trouvé pour " + unMot + ": ");
+                    //Console.WriteLine("\t" + GetWordInfos(res[0]) + ".");
+                }
+                else
+                {
+                    Label label = new Label();
+                    label.AutoSize = true;
+                    label.Text = "Aucun mot trouvé pour " + unMot + ".";
+                    label.Location = new Point(0, y);
+
+                    formulaireComplementPhrase.Controls.Add(label);
+
+                    motDansPhrase[i] = null;
+                }
+                y += 30;
+            }
+        }
+
         private void ValiderPhrase_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void OnComboBoxChangeWord(object sender, EventArgs e)
         {
 
         }

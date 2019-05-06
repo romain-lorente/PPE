@@ -7,19 +7,19 @@ using System.Threading.Tasks;
 
 namespace PPE
 {
-    public class PPETableNom
+    public class PPETableAdjectif
     {
         private SqlConnection connexion;
 
-        public PPETableNom(SqlConnection connexion)
+        public PPETableAdjectif(SqlConnection connexion)
         {
             this.connexion = connexion;
         }
 
-        public Nom SelectOne(Mot mot)
+        public Adjectif SelectOne(Mot mot)
         {
-            List<Dictionary<string, object>> results = SQLUtils.ExecuteReader("SELECT * FROM NomAndMot WHERE idMot = " + mot.Id + ";", connexion);
-            List<Nom> parsedResults = ParseResults(results);
+            List<Dictionary<string, object>> results = SQLUtils.ExecuteReader("SELECT * FROM AdjectifAndMot WHERE idMot = " + mot.Id + ";", connexion);
+            List<Adjectif> parsedResults = ParseResults(results);
             if (parsedResults.Count > 0)
             {
                 return parsedResults[0];
@@ -29,32 +29,32 @@ namespace PPE
         }
 
 
-        public void InsertOne(Nom nom)
+        public void InsertOne(Adjectif adjectif)
         {
             string sqlCommand = string.Format(
-                "INSERT INTO Nom(idMot, nature) VALUES ({0}, '{1}');",
+                "INSERT INTO Adjectif(idMot, fonction) VALUES ({0}, '{1}');",
                 new object[]
                 {
-                    nom.Id,
-                    nom.Nature
+                    adjectif.Id,
+                    adjectif.Fonction
                 }
             );
 
             SQLUtils.Execute(sqlCommand, connexion);
         }
 
-        public List<Nom> ParseResults(List<Dictionary<string, object>> results)
+        public List<Adjectif> ParseResults(List<Dictionary<string, object>> results)
         {
-            List<Nom> noms = new List<Nom>();
+            List<Adjectif> noms = new List<Adjectif>();
             foreach (Dictionary<string, object> row in results)
             {
                 int idMot = (int)row["idMot"];
                 string texte = (string)row["texte"];
                 string genre = (string)row["genre"];
                 string nombre = (string)row["nombre"];
-                string nature = (string)row["nature"];
+                string fonction = (string)row["fonction"];
 
-                noms.Add(new Nom(idMot, texte, genre, nombre, nature));
+                noms.Add(new Adjectif(idMot, texte, genre, nombre, fonction));
             }
             return noms;
         }
