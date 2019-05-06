@@ -9,7 +9,7 @@ namespace PPE
 {
     public class PPEDataBase
     {
-        private const string ADRESSE = "localhost"; // DESKTOP-VM2DUPG\\MSSQLSERVER01 pour romain
+        private const string ADRESSE = "localhost\\MSSQLSERVER01"; // DESKTOP-VM2DUPG\\MSSQLSERVER01 pour romain
         private const string DATABASE = "PPE";
         private const string USERNAME = "Romain";
         private const string PASSWORD = "Epsi2019";
@@ -21,6 +21,8 @@ namespace PPE
         public static PPETableMot Mot { private set; get; }
         public static PPETableNom Nom { private set; get; }
         public static PPETableAdjectif Adjectif { private set; get; }
+        public static PPETablePhrase Phrase { private set; get; }
+        public static PPETableMotDansPhrase MotDansPhrase { private set; get; }
 
         public static void Connexion()
         {
@@ -42,6 +44,8 @@ namespace PPE
             Mot = new PPETableMot(connexion);
             Nom = new PPETableNom(connexion);
             Adjectif = new PPETableAdjectif(connexion);
+            Phrase = new PPETablePhrase(connexion);
+            MotDansPhrase = new PPETableMotDansPhrase(connexion);
         }
 
         public static void Deconnexion()

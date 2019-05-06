@@ -82,6 +82,8 @@ namespace PPE
 
         private void AnalyserPhrase_Click(object sender, EventArgs e)
         {
+            ValiderPhrase.Visible = true;
+
             string[] phrase = inputPhrase.Text.ToLower().Split(new char[] { ' ' });
             motDansPhrase = new Mot[phrase.Length];
             comboBoxes = new Dictionary<ComboBox, int> { };
@@ -136,6 +138,8 @@ namespace PPE
                 }
                 else
                 {
+                    ValiderPhrase.Visible = false;
+
                     Label label = new Label();
                     label.AutoSize = true;
                     label.Text = "Aucun mot trouvé pour " + unMot + ".";
@@ -162,10 +166,15 @@ namespace PPE
         private void ValiderPhrase_Click(object sender, EventArgs e)
         {
             bool validation = true;
+            MotDansPhrase[] lesMots = new MotDansPhrase[motDansPhrase.Length];
 
-            foreach(Mot unMot in motDansPhrase)
+            for(int i = 0; i < motDansPhrase.Length; i++)
             {
-                if (unMot == null)
+                if (motDansPhrase[i] != null)
+                {
+                    lesMots[i] = new MotDansPhrase(motDansPhrase[i], i);
+                }
+                else
                 {
                     validation = false;
                     break;
@@ -174,7 +183,14 @@ namespace PPE
 
             if(validation)
             {
-                //TODO
+                PPEDataBase.Phrase.InsertOne(new Phrase(inputPhrase.Text, lesMots));
+                MessageBox.Show("Insertion réussie.", "Insertion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                //Suppression du contenu du panel + de la TextBox
+                formulaireComplementPhrase.Controls.Clear();
+                inputPhrase.Text = "";
+
+                ValiderPhrase.Visible = false;
             }
             else
             {

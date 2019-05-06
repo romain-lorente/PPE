@@ -557,6 +557,7 @@
             this.ValiderPhrase.TabIndex = 12;
             this.ValiderPhrase.Text = "Valider la phrase";
             this.ValiderPhrase.UseVisualStyleBackColor = true;
+            this.ValiderPhrase.Visible = false;
             this.ValiderPhrase.Click += new System.EventHandler(this.ValiderPhrase_Click);
             // 
             // formulaireComplementPhrase

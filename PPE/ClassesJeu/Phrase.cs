@@ -10,27 +10,27 @@ namespace PPE
     {
         public int Id { get; set; }
         public string Texte { set; get; }
-        public Mot[] MotsDansPhrases { set; get; }
+        public MotDansPhrase[] MotsDansPhrases { set; get; }
 
         public Mot this[int index]{
             get
             {
-                return MotsDansPhrases[index];
+                return MotsDansPhrases[index].Mot;
             }
             set
             {
-                MotsDansPhrases[index] = value;
+                MotsDansPhrases[index].Mot = value;
             }
         }
 
-        public Phrase(int id, string texte, Mot[] mots)
+        public Phrase(int id, string texte, MotDansPhrase[] mots)
         {
             Id = id;
             MotsDansPhrases = mots;
             Texte = texte;
         }
 
-        public Phrase(string texte, Mot[] mots)
+        public Phrase(string texte, MotDansPhrase[] mots)
         {
             MotsDansPhrases = mots;
             Texte = texte;

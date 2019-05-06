@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassesGestion\Utilisateur.cs" />
+    <Compile Include="ClassesJeu\MotDansPhrase.cs" />
     <Compile Include="Composants\LabelMot.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -84,6 +85,8 @@
     <Compile Include="Forms\Form_Profil.Designer.cs">
       <DependentUpon>Form_Profil.cs</DependentUpon>
     </Compile>
+    <Compile Include="SQL\PPETableMotDansPhrase.cs" />
+    <Compile Include="SQL\PPETablePhrase.cs" />
     <Compile Include="SQL\PPETableAdjectif.cs" />
     <Compile Include="SQL\PPETableNom.cs" />
     <Compile Include="SQL\PPETableVerbe.cs" />
