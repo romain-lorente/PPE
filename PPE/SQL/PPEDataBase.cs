@@ -35,7 +35,7 @@ namespace PPE
             //Ouverture de la connexion
             connexion = new SqlConnection(connexionStr);
             connexion.Open();
-
+            
             //Creation des differente tables
             Utilisateur = new PPETableUtilisateur(connexion);
             Verbe = new PPETableVerbe(connexion);
