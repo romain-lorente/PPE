@@ -39,7 +39,7 @@ namespace PPE
                 "SELECT * FROM Mot WHERE texte = '{0}'",
                 new object[]
                 {
-                    texte
+                    texte.Replace("'", "''")
                 }
             );
 
@@ -53,7 +53,7 @@ namespace PPE
                 "INSERT INTO Mot(texte, genre, nombre, type) VALUES ('{0}', '{1}', '{2}', '{3}');SELECT MAX(id) AS id FROM Mot;",
                 new object[]
                 {
-                    mot.Texte,
+                    mot.Texte.Replace("'", "''"),
                     mot.Genre,
                     mot.Nombre,
                     mot.GetType().Name

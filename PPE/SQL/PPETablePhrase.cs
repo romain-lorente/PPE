@@ -40,7 +40,7 @@ namespace PPE
                 "INSERT INTO Phrase(texte) VALUES ('{0}');SELECT MAX(id) AS id FROM Phrase;",
                 new object[]
                 {
-                    phrase.Texte
+                    phrase.Texte.Replace("'", "''")
                 }
             );
 
