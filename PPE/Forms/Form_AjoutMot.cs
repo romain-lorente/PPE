@@ -36,6 +36,8 @@ namespace PPE
                     listeMots.Rows.Add(row);
                 }
             }
+
+            UpdateListePhrases();
         }
 
         private void ajoutNom_Click(object sender, EventArgs e)
@@ -190,6 +192,9 @@ namespace PPE
                 formulaireComplementPhrase.Controls.Clear();
                 inputPhrase.Text = "";
 
+                //Mise à jour de la liste
+                UpdateListePhrases();
+
                 ValiderPhrase.Visible = false;
             }
             else
@@ -201,6 +206,19 @@ namespace PPE
         private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
 
+        }
+
+        private void UpdateListePhrases()
+        {
+            List<Phrase> lesPhrases = PPEDataBase.Phrase.SelectAll();
+
+            listePhrases.Items.Clear();
+
+            foreach (Phrase unePhrase in lesPhrases)
+            {
+                Console.WriteLine(unePhrase.Texte);
+                listePhrases.Items.Add(new ListViewItem(unePhrase.Texte));
+            }
         }
     }
 }

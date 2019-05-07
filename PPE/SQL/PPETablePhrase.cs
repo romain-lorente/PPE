@@ -28,6 +28,12 @@ namespace PPE
             return null;
         }
 
+        public List<Phrase> SelectAll()
+        {
+            List<Dictionary<string, object>> results = SQLUtils.ExecuteReader("SELECT * FROM Phrase ORDER BY 1;", connexion);
+            return ParseResults(results);
+        }
+
         public void InsertOne(Phrase phrase)
         {
             string sqlCommand = string.Format(

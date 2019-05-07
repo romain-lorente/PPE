@@ -78,6 +78,9 @@
             this.AnalyserPhrase = new System.Windows.Forms.Button();
             this.inputPhrase = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
+            this.tabListePhrase = new System.Windows.Forms.TabPage();
+            this.listePhrases = new System.Windows.Forms.ListView();
+            this.texte = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.listeMots)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabNom.SuspendLayout();
@@ -86,6 +89,7 @@
             this.tabSelection.SuspendLayout();
             this.tabMot.SuspendLayout();
             this.tabPhrase.SuspendLayout();
+            this.tabListePhrase.SuspendLayout();
             this.SuspendLayout();
             // 
             // listeMots
@@ -516,6 +520,7 @@
             // 
             this.tabSelection.Controls.Add(this.tabMot);
             this.tabSelection.Controls.Add(this.tabPhrase);
+            this.tabSelection.Controls.Add(this.tabListePhrase);
             this.tabSelection.Location = new System.Drawing.Point(11, 9);
             this.tabSelection.Name = "tabSelection";
             this.tabSelection.SelectedIndex = 0;
@@ -594,6 +599,34 @@
             this.label17.TabIndex = 2;
             this.label17.Text = "Entrer une phrase :";
             // 
+            // tabListePhrase
+            // 
+            this.tabListePhrase.Controls.Add(this.listePhrases);
+            this.tabListePhrase.Location = new System.Drawing.Point(4, 22);
+            this.tabListePhrase.Name = "tabListePhrase";
+            this.tabListePhrase.Padding = new System.Windows.Forms.Padding(3);
+            this.tabListePhrase.Size = new System.Drawing.Size(788, 440);
+            this.tabListePhrase.TabIndex = 2;
+            this.tabListePhrase.Text = "Liste des phrases";
+            this.tabListePhrase.UseVisualStyleBackColor = true;
+            // 
+            // listePhrases
+            // 
+            this.listePhrases.AllowColumnReorder = true;
+            this.listePhrases.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.texte});
+            this.listePhrases.Location = new System.Drawing.Point(7, 7);
+            this.listePhrases.Name = "listePhrases";
+            this.listePhrases.Size = new System.Drawing.Size(775, 427);
+            this.listePhrases.TabIndex = 0;
+            this.listePhrases.UseCompatibleStateImageBehavior = false;
+            this.listePhrases.View = System.Windows.Forms.View.Details;
+            // 
+            // texte
+            // 
+            this.texte.Text = "Texte";
+            this.texte.Width = 750;
+            // 
             // Form_AjoutMot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -617,6 +650,7 @@
             this.tabMot.ResumeLayout(false);
             this.tabPhrase.ResumeLayout(false);
             this.tabPhrase.PerformLayout();
+            this.tabListePhrase.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -673,5 +707,8 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Panel formulaireComplementPhrase;
         private System.Windows.Forms.Button ValiderPhrase;
+        private System.Windows.Forms.TabPage tabListePhrase;
+        private System.Windows.Forms.ListView listePhrases;
+        private System.Windows.Forms.ColumnHeader texte;
     }
 }
