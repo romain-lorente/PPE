@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PPE.TypesMots
+namespace PPE
 {
     class Pronom : Mot
     {

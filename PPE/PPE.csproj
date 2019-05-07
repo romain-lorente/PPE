@@ -118,6 +118,8 @@
     <Compile Include="ClassesJeu\Phrase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TypesMots\Adverbe.cs" />
+    <Compile Include="TypesMots\Preposition.cs" />
     <Compile Include="TypesMots\Pronom.cs" />
     <Compile Include="TypesMots\Verbe.cs" />
     <Compile Include="Utilitaires\Encodage.cs" />

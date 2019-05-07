@@ -14,6 +14,9 @@ namespace PPE
     {
         private Utilisateur utilisateurEnCours;
 
+        Dictionary<ComboBox, int> comboBoxes = new Dictionary<ComboBox, int> { };
+        Mot[] motDansPhrase = null;
+
         public Form_AjoutMot(Utilisateur utilisateurEnCours)
         {
             this.utilisateurEnCours = utilisateurEnCours;
@@ -31,7 +34,11 @@ namespace PPE
                         unMot is Nom ? "Nom" :
                         unMot is Adjectif ? "Adjectif" :
                         unMot is Verbe ? "Verbe" :
-                        "?"
+                        unMot is Conjugaison ? "Conjugaison" :
+                        unMot is Pronom ? "Pronom" :
+                        unMot is Adverbe ? "Adverbe" :
+                        unMot is Preposition ? "Préposition" :
+                        "Autre"
                     };
                     listeMots.Rows.Add(row);
                 }
@@ -79,8 +86,47 @@ namespace PPE
             PPEDataBase.Mot.InsertOne(unAdjectif);
         }
 
-        Dictionary<ComboBox, int> comboBoxes = new Dictionary<ComboBox, int> { };
-        Mot[] motDansPhrase = null;
+        private void ajoutMot_Click(object sender, EventArgs e)
+        {
+            switch (typeMot.Text)
+            {
+                case "Pronom":
+                    Pronom unPronom = new Pronom(texteMot.Text, genreMot.Text, nombreMot.Text);
+
+                    listeMots.Rows.Add(new string[] { texteMot.Text, "Pronom" });
+
+                    PPEDataBase.Mot.InsertOne(unPronom);
+
+                    break;
+
+                case "Préposition":
+                    Preposition unePreposition = new Preposition(texteMot.Text, genreMot.Text, nombreMot.Text);
+
+                    listeMots.Rows.Add(new string[] { texteMot.Text, "Préposition" });
+
+                    PPEDataBase.Mot.InsertOne(unePreposition);
+
+                    break;
+
+                case "Adverbe":
+                    Adverbe unAdverbe = new Adverbe(texteMot.Text, genreMot.Text, nombreMot.Text);
+
+                    listeMots.Rows.Add(new string[] { texteMot.Text, "Adverbe" });
+
+                    PPEDataBase.Mot.InsertOne(unAdverbe);
+
+                    break;
+
+                default:
+                    Mot unMot = new Mot(texteMot.Text, genreMot.Text, nombreMot.Text);
+
+                    listeMots.Rows.Add(new string[] { texteMot.Text, "Autre" });
+
+                    PPEDataBase.Mot.InsertOne(unMot);
+
+                    break;
+            }
+        }
 
         private void AnalyserPhrase_Click(object sender, EventArgs e)
         {
