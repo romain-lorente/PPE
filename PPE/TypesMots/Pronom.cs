@@ -12,6 +12,9 @@ namespace PPE.TypesMots
 
         public Pronom(string texte, string genre, string nombre) : base(texte, genre, nombre) { }
 
-
+        public override string ToString()
+        {
+            return Texte + " pronom " + Genre + " " + Nombre;
+        }
     }
 }

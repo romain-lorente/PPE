@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassesGestion\Utilisateur.cs" />
+    <Compile Include="ClassesJeu\MotDansPhrase.cs" />
     <Compile Include="Composants\LabelMot.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -78,12 +79,20 @@
     <Compile Include="Forms\Form_Inscription.Designer.cs">
       <DependentUpon>Form_Inscription.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Form_Jeu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Jeu.Designer.cs">
+      <DependentUpon>Form_Jeu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Form_Profil.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Form_Profil.Designer.cs">
       <DependentUpon>Form_Profil.cs</DependentUpon>
     </Compile>
+    <Compile Include="SQL\PPETableMotDansPhrase.cs" />
+    <Compile Include="SQL\PPETablePhrase.cs" />
     <Compile Include="SQL\PPETableAdjectif.cs" />
     <Compile Include="SQL\PPETableNom.cs" />
     <Compile Include="SQL\PPETableVerbe.cs" />
@@ -109,6 +118,7 @@
     <Compile Include="ClassesJeu\Phrase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TypesMots\Pronom.cs" />
     <Compile Include="TypesMots\Verbe.cs" />
     <Compile Include="Utilitaires\Encodage.cs" />
     <Compile Include="Utilitaires\SQLUtils.cs" />
@@ -117,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Inscription.resx">
       <DependentUpon>Form_Inscription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Jeu.resx">
+      <DependentUpon>Form_Jeu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Menu.resx">
       <DependentUpon>Form_Menu.cs</DependentUpon>
