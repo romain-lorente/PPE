@@ -26,9 +26,11 @@ namespace PPE.Forms
         {
             Random rand = new Random();
 
-            List<Phrase> phrases = PPEDataBase.Phrase.
+            List<Phrase> phrases = PPEDataBase.Phrase.SelectAll();
 
-            int index = rand.Next();
+            int index = rand.Next(phrases.Count);
+
+
         }
     }
 }

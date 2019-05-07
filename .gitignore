@@ -1,3 +1,4 @@
-.vs/*
-PPE/bin/*
-PPE/obj/*
+.vs\
+PPE\bin\
+PPE/obj/
+PPE/obj/Debug/*

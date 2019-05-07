@@ -43,3 +43,4 @@ D:\Cours - Programmation\C#\PPE\PPE-CSharp\PPE\obj\Debug\PPE.csproj.GenerateReso
 D:\Cours - Programmation\C#\PPE\PPE-CSharp\PPE\obj\Debug\PPE.csproj.CoreCompileInputs.cache
 D:\Cours - Programmation\C#\PPE\PPE-CSharp\PPE\obj\Debug\PPE.exe
 D:\Cours - Programmation\C#\PPE\PPE-CSharp\PPE\obj\Debug\PPE.pdb
+D:\Programmations\C#\PPE\PPE-CSharp\PPE\obj\Debug\PPE.Forms.Form_Jeu.resources
