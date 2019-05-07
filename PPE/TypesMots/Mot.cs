@@ -35,5 +35,12 @@ namespace PPE
         {
             return Texte + " : mot " + Genre + " " + Nombre;
         }
+
+        public virtual string GetWordInfos()
+        {
+            return "Mot " + Texte + ":\n" +
+                "\tGenre:\t" + Genre + "\n" +
+                "\tNombre:\t" + Nombre;
+        }
     }
 }
