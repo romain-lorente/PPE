@@ -86,7 +86,7 @@ namespace PPE
         {
             ValiderPhrase.Visible = true;
 
-            string[] phrase = inputPhrase.Text.ToLower().Split(new char[] { ' ' });
+            string[] phrase = inputPhrase.Text.ToLower().Replace("'", "' ").Replace(".", "").Replace("'  ", "' ").Split(new char[] { ' ' });
             motDansPhrase = new Mot[phrase.Length];
             comboBoxes = new Dictionary<ComboBox, int> { };
 
