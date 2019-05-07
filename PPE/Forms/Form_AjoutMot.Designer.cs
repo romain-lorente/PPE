@@ -70,6 +70,16 @@
             this.label15 = new System.Windows.Forms.Label();
             this.texteAdjectif = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.tabDivers = new System.Windows.Forms.TabPage();
+            this.ajoutMot = new System.Windows.Forms.Button();
+            this.nombreMot = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.genreMot = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.typeMot = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.texteMot = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.tabSelection = new System.Windows.Forms.TabControl();
             this.tabMot = new System.Windows.Forms.TabPage();
             this.tabPhrase = new System.Windows.Forms.TabPage();
@@ -86,6 +96,7 @@
             this.tabNom.SuspendLayout();
             this.tabVerbe.SuspendLayout();
             this.tabAdjectif.SuspendLayout();
+            this.tabDivers.SuspendLayout();
             this.tabSelection.SuspendLayout();
             this.tabMot.SuspendLayout();
             this.tabPhrase.SuspendLayout();
@@ -123,6 +134,7 @@
             this.tabControl1.Controls.Add(this.tabNom);
             this.tabControl1.Controls.Add(this.tabVerbe);
             this.tabControl1.Controls.Add(this.tabAdjectif);
+            this.tabControl1.Controls.Add(this.tabDivers);
             this.tabControl1.Location = new System.Drawing.Point(403, 6);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -516,6 +528,118 @@
             this.label16.TabIndex = 8;
             this.label16.Text = "Entrer l\'adjectif :";
             // 
+            // tabDivers
+            // 
+            this.tabDivers.Controls.Add(this.ajoutMot);
+            this.tabDivers.Controls.Add(this.nombreMot);
+            this.tabDivers.Controls.Add(this.label18);
+            this.tabDivers.Controls.Add(this.genreMot);
+            this.tabDivers.Controls.Add(this.label19);
+            this.tabDivers.Controls.Add(this.typeMot);
+            this.tabDivers.Controls.Add(this.label20);
+            this.tabDivers.Controls.Add(this.texteMot);
+            this.tabDivers.Controls.Add(this.label21);
+            this.tabDivers.Location = new System.Drawing.Point(4, 22);
+            this.tabDivers.Name = "tabDivers";
+            this.tabDivers.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDivers.Size = new System.Drawing.Size(380, 402);
+            this.tabDivers.TabIndex = 3;
+            this.tabDivers.Text = "Autres types";
+            this.tabDivers.UseVisualStyleBackColor = true;
+            // 
+            // ajoutMot
+            // 
+            this.ajoutMot.Location = new System.Drawing.Point(7, 348);
+            this.ajoutMot.Name = "ajoutMot";
+            this.ajoutMot.Size = new System.Drawing.Size(367, 48);
+            this.ajoutMot.TabIndex = 18;
+            this.ajoutMot.Text = "Ajouter le mot";
+            this.ajoutMot.UseVisualStyleBackColor = true;
+            this.ajoutMot.Click += new System.EventHandler(this.ajoutMot_Click);
+            // 
+            // nombreMot
+            // 
+            this.nombreMot.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.nombreMot.FormattingEnabled = true;
+            this.nombreMot.Items.AddRange(new object[] {
+            "Singulier",
+            "Pluriel",
+            "Invariable"});
+            this.nombreMot.Location = new System.Drawing.Point(7, 146);
+            this.nombreMot.Name = "nombreMot";
+            this.nombreMot.Size = new System.Drawing.Size(367, 21);
+            this.nombreMot.TabIndex = 15;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(3, 129);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(50, 13);
+            this.label18.TabIndex = 14;
+            this.label18.Text = "Nombre :";
+            // 
+            // genreMot
+            // 
+            this.genreMot.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.genreMot.FormattingEnabled = true;
+            this.genreMot.Items.AddRange(new object[] {
+            "Masculin",
+            "Féminin",
+            "Mixte"});
+            this.genreMot.Location = new System.Drawing.Point(7, 105);
+            this.genreMot.Name = "genreMot";
+            this.genreMot.Size = new System.Drawing.Size(367, 21);
+            this.genreMot.TabIndex = 13;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(3, 88);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(42, 13);
+            this.label19.TabIndex = 12;
+            this.label19.Text = "Genre :";
+            // 
+            // typeMot
+            // 
+            this.typeMot.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.typeMot.FormattingEnabled = true;
+            this.typeMot.Items.AddRange(new object[] {
+            "Pronom",
+            "Préposition",
+            "Adverbe",
+            "Autre"});
+            this.typeMot.Location = new System.Drawing.Point(7, 64);
+            this.typeMot.Name = "typeMot";
+            this.typeMot.Size = new System.Drawing.Size(367, 21);
+            this.typeMot.TabIndex = 11;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(3, 47);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(72, 13);
+            this.label20.TabIndex = 10;
+            this.label20.Text = "Type de mot :";
+            // 
+            // texteMot
+            // 
+            this.texteMot.Location = new System.Drawing.Point(6, 24);
+            this.texteMot.Name = "texteMot";
+            this.texteMot.Size = new System.Drawing.Size(368, 20);
+            this.texteMot.TabIndex = 9;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(3, 8);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(72, 13);
+            this.label21.TabIndex = 8;
+            this.label21.Text = "Entrer le mot :";
+            // 
             // tabSelection
             // 
             this.tabSelection.Controls.Add(this.tabMot);
@@ -646,6 +770,8 @@
             this.tabVerbe.PerformLayout();
             this.tabAdjectif.ResumeLayout(false);
             this.tabAdjectif.PerformLayout();
+            this.tabDivers.ResumeLayout(false);
+            this.tabDivers.PerformLayout();
             this.tabSelection.ResumeLayout(false);
             this.tabMot.ResumeLayout(false);
             this.tabPhrase.ResumeLayout(false);
@@ -710,5 +836,15 @@
         private System.Windows.Forms.TabPage tabListePhrase;
         private System.Windows.Forms.ListView listePhrases;
         private System.Windows.Forms.ColumnHeader texte;
+        private System.Windows.Forms.TabPage tabDivers;
+        private System.Windows.Forms.ComboBox nombreMot;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox genreMot;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ComboBox typeMot;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox texteMot;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button ajoutMot;
     }
 }

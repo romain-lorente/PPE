@@ -64,6 +64,7 @@ namespace PPE
             if(result.Count > 0 && result[0].ContainsKey("id"))
                 mot.Id = (int)result[0]["id"];
 			
+            //Insertion complémentaire seulement s'il existe une table spécifique
             if(mot is Verbe verbe)
             {
                 PPEDataBase.Verbe.InsertOne(verbe);
@@ -109,6 +110,18 @@ namespace PPE
 
                     case "Adjectif":
                         liste.Add(PPEDataBase.Adjectif.SelectOne(new Mot(id, texte, genre, nombre)));
+                        break;
+
+                    case "Pronom":
+                        liste.Add(new Pronom(id, texte, genre, nombre));
+                        break;
+
+                    case "Preposition":
+                        liste.Add(new Preposition(id, texte, genre, nombre));
+                        break;
+
+                    case "Adverbe":
+                        liste.Add(new Adverbe(id, texte, genre, nombre));
                         break;
 
                     default:
