@@ -46,5 +46,13 @@ namespace PPE
                 MessageBox.Show("Cet utilisateur n'existe pas.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void inputMDP_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                boutonConnexion_Click(sender, e);
+            }
+        }
     }
 }

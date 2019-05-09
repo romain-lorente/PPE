@@ -48,7 +48,7 @@ namespace PPE
 
         private void entraînementToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form_Jeu jeu = new Form_Jeu();
+            Form_Entrainement jeu = new Form_Entrainement();
             jeu.ShowDialog();
         }
 

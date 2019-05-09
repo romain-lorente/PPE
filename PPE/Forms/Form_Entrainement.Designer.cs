@@ -1,6 +1,6 @@
 ﻿namespace PPE
 {
-    partial class Form_Jeu
+    partial class Form_Entrainement
     {
         /// <summary>
         /// Required designer variable.
@@ -61,7 +61,7 @@
             this.panelWordInfos.Size = new System.Drawing.Size(776, 275);
             this.panelWordInfos.TabIndex = 3;
             // 
-            // Form_Jeu
+            // Form_Entrainement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -70,7 +70,7 @@
             this.Controls.Add(this.panelWordInfos);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panelPhrase);
-            this.Name = "Form_Jeu";
+            this.Name = "Form_Entrainement";
             this.Text = "Entraînement";
             this.Load += new System.EventHandler(this.Form_Jeu_Load);
             this.ResumeLayout(false);

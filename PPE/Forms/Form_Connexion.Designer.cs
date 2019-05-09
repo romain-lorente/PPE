@@ -59,6 +59,7 @@
             this.inputMDP.PasswordChar = '•';
             this.inputMDP.Size = new System.Drawing.Size(191, 20);
             this.inputMDP.TabIndex = 2;
+            this.inputMDP.KeyDown += new System.Windows.Forms.KeyEventHandler(this.inputMDP_KeyDown);
             // 
             // label2
             // 

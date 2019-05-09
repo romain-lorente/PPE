@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace PPE
 {
-    public partial class Form_Jeu : Form
+    public partial class Form_Entrainement : Form
     {
         private Phrase phrase = null;
         private Dictionary<Label, int> indexs = null;
 
-        public Form_Jeu()
+        public Form_Entrainement()
         {
             InitializeComponent();
         }

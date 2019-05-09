@@ -82,11 +82,11 @@
     <Compile Include="Forms\Form_Inscription.Designer.cs">
       <DependentUpon>Form_Inscription.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form_Jeu.cs">
+    <Compile Include="Forms\Form_Entrainement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form_Jeu.Designer.cs">
-      <DependentUpon>Form_Jeu.cs</DependentUpon>
+    <Compile Include="Forms\Form_Entrainement.Designer.cs">
+      <DependentUpon>Form_Entrainement.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Form_Profil.cs">
       <SubType>Form</SubType>
@@ -136,8 +136,8 @@
     <EmbeddedResource Include="Forms\Form_Inscription.resx">
       <DependentUpon>Form_Inscription.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form_Jeu.resx">
-      <DependentUpon>Form_Jeu.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Form_Entrainement.resx">
+      <DependentUpon>Form_Entrainement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Menu.resx">
       <DependentUpon>Form_Menu.cs</DependentUpon>
@@ -157,7 +157,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
