@@ -28,7 +28,7 @@ namespace PPE
 
         public override string GetWordInfos()
         {
-            return "Adjectif " + Texte + ":\n" +
+            return "Adjectif \"" + Texte + "\":\n" +
                 "\tFonction:\t " + Fonction + "\n" +
                 "\tGenre:\t" + Genre + "\n" +
                 "\tNombre:\t" + Nombre;

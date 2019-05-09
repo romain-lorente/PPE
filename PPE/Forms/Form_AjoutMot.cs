@@ -257,7 +257,6 @@ namespace PPE
 
             foreach (Phrase unePhrase in lesPhrases)
             {
-                Console.WriteLine(unePhrase.Texte);
                 listePhrases.Items.Add(new ListViewItem(unePhrase.Texte));
             }
         }

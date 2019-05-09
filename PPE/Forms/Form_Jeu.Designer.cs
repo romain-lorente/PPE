@@ -71,7 +71,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panelPhrase);
             this.Name = "Form_Jeu";
-            this.Text = "Form_Jeu";
+            this.Text = "Entraînement";
             this.Load += new System.EventHandler(this.Form_Jeu_Load);
             this.ResumeLayout(false);
 

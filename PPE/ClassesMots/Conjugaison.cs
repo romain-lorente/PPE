@@ -67,5 +67,15 @@ namespace PPE
         {
             return Texte + " : conjugaison à la " + Personne + " du verbe " + Verbe.Texte;
         }
+
+        public override string GetWordInfos()
+        {
+            return "Conjugaison \"" + Texte + "\":\n" +
+                "\tVerbe \"" + Verbe.Texte + "\":\n" +
+                "\t\tFonction: " + Verbe.Fonction + "\n" +
+                "\tPersonne: " + Personne + "\n" +
+                "\tGenre:\t" + Genre + "\n" +
+                "\tNombre:\t" + Nombre;
+        }
     }
 }

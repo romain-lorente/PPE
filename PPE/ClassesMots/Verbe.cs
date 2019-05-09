@@ -38,5 +38,13 @@ namespace PPE
         {
             return Texte + " : verbe d'" + Fonction;
         }
+
+        public override string GetWordInfos()
+        {
+            return "Verbe \"" + Texte + "\":\n" +
+                "\tFonction:\t" + Fonction + "\n" +
+                "\tGenre:\t" + Genre + "\n" +
+                "\tNombre:\t" + Nombre;
+        }
     }
 }

@@ -16,5 +16,12 @@ namespace PPE
         {
             return Texte + " préposition " + Genre + " " + Nombre;
         }
+
+        public override string GetWordInfos()
+        {
+            return "Préposition \"" + Texte + "\":\n" +
+                "\tGenre:\t" + Genre + "\n" +
+                "\tNombre:\t" + Nombre;
+        }
     }
 }

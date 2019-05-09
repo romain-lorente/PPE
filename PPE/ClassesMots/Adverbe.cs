@@ -16,5 +16,12 @@ namespace PPE
         {
             return Texte + " adverbe " + Genre + " " + Nombre;
         }
+
+        public override string GetWordInfos()
+        {
+            return "Adverbe \"" + Texte + "\":\n" +
+                "\tGenre:\t" + Genre + "\n" +
+                "\tNombre:\t" + Nombre;
+        }
     }
 }

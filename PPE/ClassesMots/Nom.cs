@@ -25,5 +25,13 @@ namespace PPE
         {
             return Texte + " : nom " + Nature + ", " + Genre + " " + Nombre;
         }
+
+        public override string GetWordInfos()
+        {
+            return "Nom \"" + Texte + "\":\n" +
+                "\tNature:\t" + Nature + "\n" +
+                "\tGenre:\t" + Genre + "\n" +
+                "\tNombre:\t" + Nombre;
+        }
     }
 }

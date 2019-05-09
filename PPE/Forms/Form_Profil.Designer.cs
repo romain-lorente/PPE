@@ -232,7 +232,7 @@
             this.Controls.Add(this.titreProfil);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form_Profil";
-            this.Text = "Form_Profil";
+            this.Text = "Votre profil";
             this.ControleProfil.ResumeLayout(false);
             this.consulterProfil.ResumeLayout(false);
             this.consulterProfil.PerformLayout();

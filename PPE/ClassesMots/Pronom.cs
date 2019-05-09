@@ -16,5 +16,12 @@ namespace PPE
         {
             return Texte + " pronom " + Genre + " " + Nombre;
         }
+
+        public override string GetWordInfos()
+        {
+            return "Pronom \"" + Texte + "\":\n" +
+                "\tGenre:\t" + Genre + "\n" +
+                "\tNombre:\t" + Nombre;
+        }
     }
 }
