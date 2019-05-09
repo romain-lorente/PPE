@@ -47,10 +47,25 @@ namespace PPE
         private void labelClick(object sender, EventArgs e)
         {
             Label label = (Label)sender;
-
             int index = indexs[label];
+            Mot mot = phrase[index];
 
-            Console.WriteLine(phrase[index].GetWordInfos());
+            panelWordInfos.Controls.Clear();
+
+            string wordInfos = mot.GetWordInfos();
+            wordInfos = wordInfos.Replace("\t", "    ");
+
+            string[] lines = wordInfos.Split(new char[] { '\n' });
+            for (int i = 0; i < lines.Length; i++)
+            {
+                Label labelWordInfo = new Label();
+                labelWordInfo.AutoSize = true;
+                labelWordInfo.Text = lines[i];
+                labelWordInfo.Location = new Point(10, i * 35);
+                labelWordInfo.Font = new Font("Arial", 18F);
+
+                panelWordInfos.Controls.Add(labelWordInfo);
+            }
         }
 
         private void generatePhrase()

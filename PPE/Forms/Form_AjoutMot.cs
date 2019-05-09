@@ -249,11 +249,6 @@ namespace PPE
             }
         }
 
-        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-
-        }
-
         private void UpdateListePhrases()
         {
             List<Phrase> lesPhrases = PPEDataBase.Phrase.SelectAll();
