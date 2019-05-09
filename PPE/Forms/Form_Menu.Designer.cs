@@ -68,13 +68,13 @@
             // jeuNormalToolStripMenuItem
             // 
             this.jeuNormalToolStripMenuItem.Name = "jeuNormalToolStripMenuItem";
-            this.jeuNormalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.jeuNormalToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.jeuNormalToolStripMenuItem.Text = "Jeu normal";
             // 
             // entraînementToolStripMenuItem
             // 
             this.entraînementToolStripMenuItem.Name = "entraînementToolStripMenuItem";
-            this.entraînementToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.entraînementToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.entraînementToolStripMenuItem.Text = "Entraînement";
             this.entraînementToolStripMenuItem.Click += new System.EventHandler(this.entraînementToolStripMenuItem_Click);
             // 
@@ -90,15 +90,16 @@
             // voirMonProfilToolStripMenuItem
             // 
             this.voirMonProfilToolStripMenuItem.Name = "voirMonProfilToolStripMenuItem";
-            this.voirMonProfilToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.voirMonProfilToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.voirMonProfilToolStripMenuItem.Text = "Profil";
             this.voirMonProfilToolStripMenuItem.Click += new System.EventHandler(this.voirMonProfilToolStripMenuItem_Click);
             // 
             // classementToolStripMenuItem
             // 
             this.classementToolStripMenuItem.Name = "classementToolStripMenuItem";
-            this.classementToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.classementToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.classementToolStripMenuItem.Text = "Classement";
+            this.classementToolStripMenuItem.Click += new System.EventHandler(this.classementToolStripMenuItem_Click);
             // 
             // fenêtreToolStripMenuItem
             // 
