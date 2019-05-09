@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PPE.Utilisateur">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAEAAAAAAAAAAAAAAAACAAAAAAACAQAAAIAAA=</HashCode>
+      <FileName>ClassesGestion\Utilisateur.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PPE.MotDansPhrase">
+    <Position X="7" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAgAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassesJeu\MotDansPhrase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PPE.PhraseEnum" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="23.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAACCAAAAAAAAAAAAAIAAAAAABAAA=</HashCode>
+      <FileName>ClassesJeu\Phrase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PPE.Phrase" BaseTypeListCollapsed="true">
+    <Position X="2.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAABAACAAAQABAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>ClassesJeu\Phrase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PPE.Adjectif">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAIAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassesMots\Adjectif.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PPE.Adverbe">
+    <Position X="5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassesMots\Adverbe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PPE.Conjugaison">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAFAAAAAAABAAEAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>ClassesMots\Conjugaison.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PPE.Mot">
+    <Position X="2.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACEAAAAAAAAAAEAAIAwAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassesMots\Mot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PPE.Nom">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAEAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassesMots\Nom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PPE.Preposition">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassesMots\Preposition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PPE.Pronom">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassesMots\Pronom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PPE.Verbe">
+    <Position X="5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAIAAAAAAAAEAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassesMots\Verbe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PPE.Form_AjoutMot" Collapsed="true">
+    <Position X="18.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>/wAEAoCYQCMCMJgILhCAAAJawEQAHEgQQQIAhICIhjA=</HashCode>
+      <FileName>Forms\Form_AjoutMot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PPE.Form_Connexion" Collapsed="true">
+    <Position X="20" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQIAAGBAABAAAAiAAAACAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Forms\Form_Connexion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PPE.Form_Inscription" Collapsed="true">
+    <Position X="21.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAACAAAJAACACAAgACAQAAAAEAAAAAAAQAAAA=</HashCode>
+      <FileName>Forms\Form_Inscription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PPE.Form_Jeu" Collapsed="true">
+    <Position X="23.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAEAACAAgAEAAACAABACAABQAAAAACAEAAABAAA=</HashCode>
+      <FileName>Forms\Form_Jeu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PPE.Form1" Collapsed="true">
+    <Position X="18.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BQAAIAACwDAgAAAgAACAAAACEAEAAAAAAAwAACAAAAA=</HashCode>
+      <FileName>Forms\Form_Menu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PPE.Form_Profil" Collapsed="true">
+    <Position X="21.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAgAUAAgCHAAJAAEACBAIBCAQAwAEACAAAIAAAAAAA=</HashCode>
+      <FileName>Forms\Form_Profil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PPE.Program" Collapsed="true">
+    <Position X="21.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PPE.PPEDataBase">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAQEAABAACBAAAAAAAACQUAECAAQAAgAAAAAA=</HashCode>
+      <FileName>SQL\PPEDataBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PPE.PPETableAdjectif">
+    <Position X="13.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIgAAAAAAIAAAAAAAgAAAAAA=</HashCode>
+      <FileName>SQL\PPETableAdjectif.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PPE.PPETableMot">
+    <Position X="13.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAYgAAAAAAIAAAAAAAgAAAAAA=</HashCode>
+      <FileName>SQL\PPETableMot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PPE.PPETableMotDansPhrase">
+    <Position X="11.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAgAAAAAAIAAAAAAAgAAAAAA=</HashCode>
+      <FileName>SQL\PPETableMotDansPhrase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PPE.PPETableNom">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIgAAAAAAIAAAAAAAgAAAAAA=</HashCode>
+      <FileName>SQL\PPETableNom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PPE.PPETablePhrase">
+    <Position X="9.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAIgAAAAAAIAAAAAAAgAAAAAA=</HashCode>
+      <FileName>SQL\PPETablePhrase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PPE.PPETableUtilisateur">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACACAAAAAAAAAAIgAAAAAAAAAAAAAAgAEAAAA=</HashCode>
+      <FileName>SQL\PPETableUtilisateur.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PPE.PPETableVerbe">
+    <Position X="11.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIwAAAAAAIAAAAAAAgAAAAAA=</HashCode>
+      <FileName>SQL\PPETableVerbe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PPE.Encodage">
+    <Position X="7" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utilitaires\Encodage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PPE.SQLUtils">
+    <Position X="7" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utilitaires\SQLUtils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PPE.Properties.Resources" Collapsed="true">
+    <Position X="23.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PPE.Properties.Settings" Collapsed="true">
+    <Position X="18.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
