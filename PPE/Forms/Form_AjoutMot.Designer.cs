@@ -91,6 +91,7 @@
             this.tabListePhrase = new System.Windows.Forms.TabPage();
             this.listePhrases = new System.Windows.Forms.ListView();
             this.texte = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.supprimerPhrase = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.listeMots)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabNom.SuspendLayout();
@@ -725,6 +726,7 @@
             // 
             // tabListePhrase
             // 
+            this.tabListePhrase.Controls.Add(this.supprimerPhrase);
             this.tabListePhrase.Controls.Add(this.listePhrases);
             this.tabListePhrase.Location = new System.Drawing.Point(4, 22);
             this.tabListePhrase.Name = "tabListePhrase";
@@ -741,7 +743,7 @@
             this.texte});
             this.listePhrases.Location = new System.Drawing.Point(7, 7);
             this.listePhrases.Name = "listePhrases";
-            this.listePhrases.Size = new System.Drawing.Size(775, 427);
+            this.listePhrases.Size = new System.Drawing.Size(775, 398);
             this.listePhrases.TabIndex = 0;
             this.listePhrases.UseCompatibleStateImageBehavior = false;
             this.listePhrases.View = System.Windows.Forms.View.Details;
@@ -750,6 +752,16 @@
             // 
             this.texte.Text = "Texte";
             this.texte.Width = 750;
+            // 
+            // supprimerPhrase
+            // 
+            this.supprimerPhrase.Location = new System.Drawing.Point(7, 411);
+            this.supprimerPhrase.Name = "supprimerPhrase";
+            this.supprimerPhrase.Size = new System.Drawing.Size(775, 23);
+            this.supprimerPhrase.TabIndex = 1;
+            this.supprimerPhrase.Text = "Supprimer la sélection";
+            this.supprimerPhrase.UseVisualStyleBackColor = true;
+            this.supprimerPhrase.Click += new System.EventHandler(this.supprimerPhrase_Click);
             // 
             // Form_AjoutMot
             // 
@@ -846,5 +858,6 @@
         private System.Windows.Forms.TextBox texteMot;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button ajoutMot;
+        private System.Windows.Forms.Button supprimerPhrase;
     }
 }

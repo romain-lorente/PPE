@@ -54,6 +54,20 @@ namespace PPE
             }
         }
 
+        public void DeleteOne(Phrase phrase)
+        {
+            string sqlCommand = string.Format(
+                "DELETE FROM  Phrase WHERE id = {0};",
+                new object[]
+                {
+                    phrase.Id
+                }
+            );
+
+            PPEDataBase.MotDansPhrase.DeleteByPhrase(phrase);
+            SQLUtils.Execute(sqlCommand, connexion);
+        }
+
         public List<Phrase> ParseResults(List<Dictionary<string, object>> results)
         {
             List<Phrase> liste = new List<Phrase>();

@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="ClassesGestion\Utilisateur.cs" />
     <Compile Include="ClassesJeu\MotDansPhrase.cs" />
+    <Compile Include="Composants\ListViewPhrase.cs" />
     <Compile Include="Forms\Form_Classement.cs">
       <SubType>Form</SubType>
     </Compile>

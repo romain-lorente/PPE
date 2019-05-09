@@ -47,6 +47,19 @@ namespace PPE
                 motDansPhrase.Id = (int)result[0]["id"];
         }
 
+        public void DeleteByPhrase(Phrase phrase)
+        {
+            string sqlCommand = string.Format(
+                "DELETE FROM MotDansPhrase WHERE idPhrase = {0};",
+                new object[]
+                {
+                    phrase.Id
+                }
+            );
+
+            SQLUtils.Execute(sqlCommand, connexion);
+        }
+
         private List<MotDansPhrase> ParseResult(List<Dictionary<string, object>> results)
         {
             List<MotDansPhrase> liste = new List<MotDansPhrase>();
