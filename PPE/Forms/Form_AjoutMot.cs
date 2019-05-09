@@ -59,12 +59,12 @@ namespace PPE
 
         private void ajoutVerbe_Click(object sender, EventArgs e)
         {
-            Conjugaison S1 = new Conjugaison(pers1SVerbe.Text, "mixte", "singulier");
-            Conjugaison S2 = new Conjugaison(pers2SVerbe.Text, "mixte", "singulier");
-            Conjugaison S3 = new Conjugaison(pers3SVerbe.Text, "mixte", "singulier");
-            Conjugaison P1 = new Conjugaison(pers1PVerbe.Text, "mixte", "pluriel");
-            Conjugaison P2 = new Conjugaison(pers2PVerbe.Text, "mixte", "pluriel");
-            Conjugaison P3 = new Conjugaison(pers3PVerbe.Text, "mixte", "pluriel");
+            Conjugaison S1 = new Conjugaison(pers1SVerbe.Text, "Mixte", "Singulier");
+            Conjugaison S2 = new Conjugaison(pers2SVerbe.Text, "Mixte", "Singulier");
+            Conjugaison S3 = new Conjugaison(pers3SVerbe.Text, "Mixte", "Singulier");
+            Conjugaison P1 = new Conjugaison(pers1PVerbe.Text, "Mixte", "Pluriel");
+            Conjugaison P2 = new Conjugaison(pers2PVerbe.Text, "Mixte", "Pluriel");
+            Conjugaison P3 = new Conjugaison(pers3PVerbe.Text, "Mixte", "Pluriel");
 
             Conjugaison[] conjugaisonVerbe = new Conjugaison[] { S1, S2, S3, P1, P2, P3 };
 			

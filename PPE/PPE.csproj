@@ -64,9 +64,6 @@
   <ItemGroup>
     <Compile Include="ClassesGestion\Utilisateur.cs" />
     <Compile Include="ClassesJeu\MotDansPhrase.cs" />
-    <Compile Include="Composants\LabelMot.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Forms\Form_Connexion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,7 +96,7 @@
     <Compile Include="SQL\PPETableMot.cs" />
     <Compile Include="SQL\PPEDataBase.cs" />
     <Compile Include="SQL\PPETableUtilisateur.cs" />
-    <Compile Include="TypesMots\Adjectif.cs" />
+    <Compile Include="ClassesMots\Adjectif.cs" />
     <Compile Include="Forms\Form_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,16 +109,16 @@
     <Compile Include="Forms\Form_AjoutMot.Designer.cs">
       <DependentUpon>Form_AjoutMot.cs</DependentUpon>
     </Compile>
-    <Compile Include="TypesMots\Conjugaison.cs" />
-    <Compile Include="TypesMots\Mot.cs" />
-    <Compile Include="TypesMots\Nom.cs" />
+    <Compile Include="ClassesMots\Conjugaison.cs" />
+    <Compile Include="ClassesMots\Mot.cs" />
+    <Compile Include="ClassesMots\Nom.cs" />
     <Compile Include="ClassesJeu\Phrase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TypesMots\Adverbe.cs" />
-    <Compile Include="TypesMots\Preposition.cs" />
-    <Compile Include="TypesMots\Pronom.cs" />
-    <Compile Include="TypesMots\Verbe.cs" />
+    <Compile Include="ClassesMots\Adverbe.cs" />
+    <Compile Include="ClassesMots\Preposition.cs" />
+    <Compile Include="ClassesMots\Pronom.cs" />
+    <Compile Include="ClassesMots\Verbe.cs" />
     <Compile Include="Utilitaires\Encodage.cs" />
     <Compile Include="Utilitaires\SQLUtils.cs" />
     <EmbeddedResource Include="Forms\Form_Connexion.resx">
