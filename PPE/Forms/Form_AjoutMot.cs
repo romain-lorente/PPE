@@ -257,8 +257,25 @@ namespace PPE
 
             foreach (Phrase unePhrase in lesPhrases)
             {
-                listePhrases.Items.Add(new ListViewItem(unePhrase.Texte));
+                listePhrases.Items.Add(new ListViewPhrase(unePhrase));
             }
+        }
+
+        //Suppression d'une phrase
+        private void supprimerPhrase_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Supprimer les éléments sélectionnés ?", "Suppression", MessageBoxButtons.YesNo);
+            if (res == DialogResult.Yes)
+            {
+                foreach (ListViewItem item in listePhrases.SelectedItems)
+                {
+                    ListViewPhrase itemPhrase = (ListViewPhrase)item;
+
+                    PPEDataBase.Phrase.DeleteOne(itemPhrase.Phrase);
+                }
+            }
+
+            UpdateListePhrases();
         }
     }
 }

@@ -63,5 +63,11 @@ namespace PPE
             Form_Jeu jeu = new Form_Jeu(utilisateurEnCours);
             jeu.ShowDialog();
         }
+
+        private void classementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Classement classement = new Form_Classement();
+            classement.ShowDialog();
+        }
     }
 }
