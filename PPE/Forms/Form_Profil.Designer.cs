@@ -233,6 +233,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form_Profil";
             this.Text = "Votre profil";
+            this.Load += new System.EventHandler(this.Form_Profil_Load);
             this.ControleProfil.ResumeLayout(false);
             this.consulterProfil.ResumeLayout(false);
             this.consulterProfil.PerformLayout();

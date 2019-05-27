@@ -70,6 +70,7 @@
             this.jeuNormalToolStripMenuItem.Name = "jeuNormalToolStripMenuItem";
             this.jeuNormalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.jeuNormalToolStripMenuItem.Text = "Jeu normal";
+            this.jeuNormalToolStripMenuItem.Click += new System.EventHandler(this.jeuNormalToolStripMenuItem_Click);
             // 
             // entraînementToolStripMenuItem
             // 

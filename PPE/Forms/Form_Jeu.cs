@@ -15,14 +15,22 @@ namespace PPE
         private Phrase phrase = null;
         private Dictionary<Label, int> indexs = null;
 
-        public Form_Jeu()
+        private Type[] aTrouver = null;
+
+        private Utilisateur utilisateurEnJeu;
+
+        int score = 0;
+
+        public Form_Jeu(Utilisateur utilisateurEnJeu)
         {
             InitializeComponent();
+            this.utilisateurEnJeu = utilisateurEnJeu;
         }
 
         private void Form_Jeu_Load(object sender, EventArgs e)
         {
             generatePhrase();
+            generateQuestion();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -50,21 +58,21 @@ namespace PPE
             int index = indexs[label];
             Mot mot = phrase[index];
 
-            panelWordInfos.Controls.Clear();
-
-            string wordInfos = mot.GetWordInfos();
-            wordInfos = wordInfos.Replace("\t", "    ");
-
-            string[] lines = wordInfos.Split(new char[] { '\n' });
-            for (int i = 0; i < lines.Length; i++)
+            bool typetrouver = false;
+            foreach(Type typeMot in aTrouver)
             {
-                Label labelWordInfo = new Label();
-                labelWordInfo.AutoSize = true;
-                labelWordInfo.Text = lines[i];
-                labelWordInfo.Location = new Point(10, i * 35);
-                labelWordInfo.Font = new Font("Arial", 18F);
+                if(mot.GetType() == typeMot)
+                {
+                    AddScore();
+                    NextQuestion();
+                    typetrouver = true;
+                }
+            }
 
-                panelWordInfos.Controls.Add(labelWordInfo);
+            if(!typetrouver)
+            {
+                MessageBox.Show("Faux", "Resultat", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                NextQuestion();
             }
         }
 
@@ -73,34 +81,105 @@ namespace PPE
             Random rand = new Random();
 
             List<Phrase> phrases = PPEDataBase.Phrase.SelectAll();
-            phrase = phrases[rand.Next(phrases.Count)];
-            indexs = new Dictionary<Label, int>();
-
-            panelPhrase.Controls.Clear();
-
-            int x = 10;
-            for(int i = 0; i < phrase.Length; i++)
+            if(phrases.Count > 0)
             {
-                Mot mot = phrase[i];
+                phrase = phrases[rand.Next(phrases.Count)];
+                indexs = new Dictionary<Label, int>();
 
-                Label label = new Label();
-                label.AutoSize = true;
-                label.Text = mot.Texte;
-                label.Location = new Point(x, 10);
-                label.Font = new Font("Arial", 25F);
+                panelPhrase.Controls.Clear();
 
-                label.MouseEnter += new EventHandler(labelBorderVisible);
-                label.MouseLeave += new EventHandler(labelBorderInvisible);
-                label.Click += new EventHandler(labelClick);
+                int x = 10;
+                for (int i = 0; i < phrase.Length; i++)
+                {
+                    Mot mot = phrase[i];
 
-                Graphics labelGraphics = label.CreateGraphics();
-                int size = (int)labelGraphics.MeasureString(mot.Texte, label.Font).Width;
-                int spaceSize = (int)labelGraphics.MeasureString(" ", label.Font).Width;
-                x += spaceSize + size;
+                    Label label = new Label();
+                    label.AutoSize = true;
+                    label.Text = mot.Texte;
+                    label.Location = new Point(x, 10);
+                    label.Font = new Font("Arial", 25F);
 
-                panelPhrase.Controls.Add(label);
+                    label.MouseEnter += new EventHandler(labelBorderVisible);
+                    label.MouseLeave += new EventHandler(labelBorderInvisible);
+                    label.Click += new EventHandler(labelClick);
 
-                indexs.Add(label, i);
+                    Graphics labelGraphics = label.CreateGraphics();
+                    int size = (int)labelGraphics.MeasureString(mot.Texte, label.Font).Width;
+                    int spaceSize = (int)labelGraphics.MeasureString(" ", label.Font).Width;
+                    x += spaceSize + size;
+
+                    panelPhrase.Controls.Add(label);
+
+                    indexs.Add(label, i);
+                }
+            }
+        }
+
+        private void generateQuestion()
+        {
+            Dictionary<string, Type[]> questions = new Dictionary<string, Type[]>
+            {
+                { "Clique sur un verbe.", new Type[] { typeof(Conjugaison), typeof(Verbe) } },
+                { "Clique sur un adjectif.", new Type[] {typeof(Adjectif) } },
+                { "Clique sur un nom", new Type[] {typeof(Nom) } },
+                { "Clique sur un pronom", new Type[] { typeof(Pronom) } },
+                { "Clique sur une preposition", new Type[] { typeof(Preposition) } },
+            };
+
+            Random rand = new Random();
+
+            KeyValuePair<string, Type[]> question = questions.ElementAt(rand.Next(0, questions.Count));
+
+            aTrouver = question.Value;
+            labelQuestion.Text = question.Key;
+        }
+
+        private void AddScore()
+        {
+            score += 1;
+            labelScore.Text = "Score: " + score;
+            MessageBox.Show("Vrai", "Resultat", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            NextQuestion();
+        }
+
+        private void NextQuestion()
+        {
+            generatePhrase();
+            generateQuestion();
+        }
+
+        private void buttonAucun_Click(object sender, EventArgs e)
+        {
+            bool aucun = true;
+            foreach (Mot mot in phrase)
+            {
+                foreach (Type typeMot in aTrouver)
+                {
+                    if (mot.GetType() == typeMot)
+                    {
+                        aucun = false;
+                    }
+                }   
+            }
+
+            if(aucun)
+            {
+                AddScore();
+            }
+            else
+            {
+                MessageBox.Show("Faux", "Resultat", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                NextQuestion();
+            }
+            
+        }
+
+        private void Form_Jeu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+           if(utilisateurEnJeu.MeilleurScore < score)
+            {
+                utilisateurEnJeu.MeilleurScore = score;
+                PPEDataBase.Utilisateur.UpdateOne(utilisateurEnJeu);
             }
         }
     }

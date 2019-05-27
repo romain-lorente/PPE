@@ -84,5 +84,10 @@ namespace PPE
             inputNom.Text = utilisateurEnCours.Nom;
             inputPrenom.Text = utilisateurEnCours.Prenom;
         }
+
+        private void Form_Profil_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
