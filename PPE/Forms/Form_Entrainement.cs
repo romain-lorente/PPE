@@ -10,27 +10,19 @@ using System.Windows.Forms;
 
 namespace PPE
 {
-    public partial class Form_Jeu : Form
+    public partial class Form_Entrainement : Form
     {
         private Phrase phrase = null;
         private Dictionary<Label, int> indexs = null;
 
-        private Type[] aTrouver = null;
-
-        private Utilisateur utilisateurEnJeu;
-
-        int score = 0;
-
-        public Form_Jeu(Utilisateur utilisateurEnJeu)
+        public Form_Entrainement()
         {
             InitializeComponent();
-            this.utilisateurEnJeu = utilisateurEnJeu;
         }
 
         private void Form_Jeu_Load(object sender, EventArgs e)
         {
             generatePhrase();
-            generateQuestion();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -58,21 +50,21 @@ namespace PPE
             int index = indexs[label];
             Mot mot = phrase[index];
 
-            bool typetrouver = false;
-            foreach(Type typeMot in aTrouver)
-            {
-                if(mot.GetType() == typeMot)
-                {
-                    AddScore();
-                    NextQuestion();
-                    typetrouver = true;
-                }
-            }
+            panelWordInfos.Controls.Clear();
 
-            if(!typetrouver)
+            string wordInfos = mot.GetWordInfos();
+            wordInfos = wordInfos.Replace("\t", "    ");
+
+            string[] lines = wordInfos.Split(new char[] { '\n' });
+            for (int i = 0; i < lines.Length; i++)
             {
-                MessageBox.Show("Faux", "Resultat", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                NextQuestion();
+                Label labelWordInfo = new Label();
+                labelWordInfo.AutoSize = true;
+                labelWordInfo.Text = lines[i];
+                labelWordInfo.Location = new Point(10, i * 35);
+                labelWordInfo.Font = new Font("Arial", 18F);
+
+                panelWordInfos.Controls.Add(labelWordInfo);
             }
         }
 
@@ -112,74 +104,6 @@ namespace PPE
 
                     indexs.Add(label, i);
                 }
-            }
-        }
-
-        private void generateQuestion()
-        {
-            Dictionary<string, Type[]> questions = new Dictionary<string, Type[]>
-            {
-                { "Clique sur un verbe.", new Type[] { typeof(Conjugaison), typeof(Verbe) } },
-                { "Clique sur un adjectif.", new Type[] {typeof(Adjectif) } },
-                { "Clique sur un nom", new Type[] {typeof(Nom) } },
-                { "Clique sur un pronom", new Type[] { typeof(Pronom) } },
-                { "Clique sur une preposition", new Type[] { typeof(Preposition) } },
-            };
-
-            Random rand = new Random();
-
-            KeyValuePair<string, Type[]> question = questions.ElementAt(rand.Next(0, questions.Count));
-
-            aTrouver = question.Value;
-            labelQuestion.Text = question.Key;
-        }
-
-        private void AddScore()
-        {
-            score += 1;
-            labelScore.Text = "Score: " + score;
-            MessageBox.Show("Vrai", "Resultat", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            NextQuestion();
-        }
-
-        private void NextQuestion()
-        {
-            generatePhrase();
-            generateQuestion();
-        }
-
-        private void buttonAucun_Click(object sender, EventArgs e)
-        {
-            bool aucun = true;
-            foreach (Mot mot in phrase)
-            {
-                foreach (Type typeMot in aTrouver)
-                {
-                    if (mot.GetType() == typeMot)
-                    {
-                        aucun = false;
-                    }
-                }   
-            }
-
-            if(aucun)
-            {
-                AddScore();
-            }
-            else
-            {
-                MessageBox.Show("Faux", "Resultat", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                NextQuestion();
-            }
-            
-        }
-
-        private void Form_Jeu_FormClosing(object sender, FormClosingEventArgs e)
-        {
-           if(utilisateurEnJeu.MeilleurScore < score)
-            {
-                utilisateurEnJeu.MeilleurScore = score;
-                PPEDataBase.Utilisateur.UpdateOne(utilisateurEnJeu);
             }
         }
     }

@@ -10,9 +10,14 @@ namespace PPE
     public class PPEDataBase
     {
         private const string ADRESSE = "172.16.196.4";
+
         private const string DATABASE = "bdqlegrand";
         private const string USERNAME = "qlegrand";
         private const string PASSWORD = "Qwerty62";
+        
+        //private const string DATABASE = "bdrlorente";
+        //private const string USERNAME = "rlorente";
+        //private const string PASSWORD = "Azerty62";
 
         private static SqlConnection connexion;
 
